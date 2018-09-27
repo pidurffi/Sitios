@@ -1,0 +1,136 @@
+- composer create-project symfony/framework-standard-edition my_project_name
+- cd my_project_name
+ 
+- En app/config/config.yml
+ framework:
+    translator: ~
+    
+- composer require friendsofsymfony/user-bundle "~2.0"
+
+- en App/Kernel
+
+new FOS\UserBundle\FOSUserBundle(),
+
+- app/config/security.yml 
+security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface: bcrypt
+
+    role_hierarchy:
+        #ROLE_ADMIN:       ROLE_USER
+        ROLE_ADMIN_ESTABLECIMIENTO: ROLE_USER
+        ROLE_SUPER_ADMIN: ROLE_ADMIN_ESTABLECIMIENTO
+
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username_email
+
+    firewalls:
+        main:
+            pattern: ^/
+            form_login:
+                provider: fos_userbundle
+                csrf_token_generator: security.csrf.token_manager
+                # if you are using Symfony < 2.8, use the following config instead:
+                # csrf_provider: form.csrf_provider
+
+            logout:       true
+            anonymous:    true
+
+    access_control:
+        - { path: ^/panel/, role: ROLE_SUPER_ADMIN } 
+
+- en app/config/config.yml
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+#    service:
+#        user_manager: mdlp_admin_manager
+    from_email:
+        address: "%mailer_user%"
+        sender_name: "Mar de las Pampas"
+            
+- en app/config/routing.yml
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    
+- composer require symfony/templating
+
+- en config.yml
+framework:
+  templating:
+    engines: ['twig']    
+  
+-mv web/ public_html    
+
+- composer require avanzu/admin-theme-bundle 
+ o 
+- composer require avanzu/admin-theme-bundle dev-master
+
+- en app/Kernel
+		new Avanzu\AdminThemeBundle\AvanzuAdminThemeBundle(),   
+		
+- php bin/console assets:install --symlink public_html	
+
+- php bin/console avanzu:admin:initialize --web-dir public_html
+
+
+- php bin/console avanzu:admin:fetch-vendor
+
+- composer require symfony/assetic-bundle
+
+- en app/Kernel
+		new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+
+- en app/config/config_dev.yml
+assetic:
+    use_controller: false
+
+- en config.yml
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+    globals:
+        admin_skin: skin-blue
+....
+avanzu_admin_theme:
+    use_assetic: false
+
+- con app/config/routing.yml
+panel:
+    resource: "@AppBundle/Resources/config/routing_panel.yml"
+    prefix:   /panel        
+    
+- en app/config/config.yml
+parameters:
+    locale: es    
+    
+- en app/config/services.yml se agrega
+parameters:
+    panel_bundle.show_user_listener.class: AppBundle\EventListener\MyShowUserListener
+services:    
+    menu_listener:
+        class: AppBundle\EventListener\MyMenuItemListListener
+        arguments: ["@security.token_storage"]
+        tags:
+            - { name: kernel.event_listener, event: theme.sidebar_setup_menu, method: onSetupMenu }
+    panel_bundle.show_user_listener:
+        arguments: ["@security.token_storage"]
+        class: "%panel_bundle.show_user_listener.class%"
+        tags:
+            - { name: kernel.event_listener, event: theme.navbar_user, method: onShowUser }    
+            
+- composer require comur/image-bundle "1.3.*@dev"
+
+- en app/Kernel
+		new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+        new JMS\TranslationBundle\JMSTranslationBundle(),
+        new Comur\ImageBundle\ComurImageBundle(),
+        
+- en app/config/routing o en src/...config/routing_panel.yml        
+
+- en el body del template:
+{% include "ComurImageBundle:Form:croppable_image_modal.html.twig"%}
+
+- php bin/console assets:install --symlink public_html

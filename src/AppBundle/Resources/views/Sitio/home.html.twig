@@ -1,0 +1,243 @@
+{% extends "AppBundle::Sitio/layout.html.twig" %}
+
+{% block content %}
+		<section id="intro">
+            <div class="intro-container">
+                <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+                    <ol class="carousel-indicators"></ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <div class="carousel-background">
+                                <img src="{{ asset('bundles/app/maquetado/img/intro-carousel/001.jpg') }}" alt="">
+                            </div>
+                            <div class="carousel-container">
+                                <div class="carousel-content">
+                                    <h2>Arenas de Mar</h2>
+                                    <p>Tu lugar, cerca de la playa</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-background">
+                                <img src="{{ asset('bundles/app/maquetado/img/intro-carousel/002.jpg') }}" alt="">
+                            </div>
+                            <div class="carousel-container">
+                                <div class="carousel-content">
+                                    <h2>Departamentos con vista al mar</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-background">
+                                <img src="{{ asset('bundles/app/maquetado/img/intro-carousel/003.jpg') }}" alt="">
+                            </div>
+                            <div class="carousel-container">
+                                <div class="carousel-content">
+                                    <h2>Conocé Villa Gesell</h2>
+                                    <a href="#featured-services" class="btn-get-started scrollto">Más información</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">  <span class="carousel-control-prev-icon fas fa-angle-left" aria-hidden="true"></span>  <span class="sr-only">Anterior</span></a>
+                    <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">  <span class="carousel-control-next-icon fas fa-angle-right" aria-hidden="true"></span>  <span class="sr-only">Siguiente</span></a>
+                </div>
+            </div>
+        </section>
+
+        <main id="main">
+
+            <section id="promociones">
+                <div class="container">
+                    <div class="row no-gutters">
+                        <div class="col-md-4 wow fadeInUp">
+                            <div class="about-col about-col-1">
+                                <i class="fas fa-umbrella-beach"></i>
+                                <h2 class="title">Villa Gesell con vista al mar</h2>
+                                <p>En una ubicación privilegiada a metros del mar, <b>Arenas de Mar</b> cuanta con un total de 12 confortables departamentos</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 wow fadeInUp">
+                            <div class="about-col about-col-2">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <h2 class="title">Cómo llegar</h2>
+                                <p>A muy pocos pasos de la playa y algunas cuadras del centro comercial de Villa Gesell, se encuentran los departamentos <b>Arenas de Mar</b></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="about-col about-col-3">
+                                <i class="fas fa-info-circle"></i>
+                                <h2 class="title">Información</h2>
+                                <p>Villa Gesell no solo cuenta con las playas mas lindas de la costa atlántica. Arenas finas, medanos, bosque, historia, aventura, diversión...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="apartamentos">
+                <div class="container">
+                    <header class="section-header wow fadeInUp">
+                        <h2>Los Apartamentos</h2>
+                        <p>En una ubicación privilegiada a metros del mar, Arenas de Mar cuanta con un total de 12 confortables departamentos de 2 y 3 ambientes, con capacidad de hasta 6 personas, cochera cubierta incluida, a pasos del mar y con inmejorables vistas a la playa y la ciudad.</p>
+                        <p>El edificio posee amplios balcones, en todos sus departamentos, cuatro pisos con ascensor, un quincho de uso común en el último piso con una excelente vista al mar y a la naturaleza.</p>
+                    </header>
+                    <div class="item wow fadeInUp">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="{{ asset('bundles/app/maquetado/img/apartamentos/001.jpg') }}" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <h3>Departamentos con vista al mar</h3>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Habitación con sommier de 2 plazas</li>
+                                    <li><i class="fas fa-check"></i> Living comedor, con cama marinera y sofa cama</li>
+                                    <li><i class="fas fa-check"></i> Heladera con freezer</li>
+                                    <li><i class="fas fa-check"></i> Microondas</li>
+                                    <li><i class="fas fa-check"></i> Cocina con horno, cafetera y vajilla completa</li>
+                                    <li><i class="fas fa-check"></i> Baño con ducha</li>
+                                    <li><i class="fas fa-check"></i> Lavadero en el balcón de la cocina</li>
+                                    <li><i class="fas fa-check"></i> Balcones en todos los ambientes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item wow fadeInUp">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="{{ asset('bundles/app/maquetado/img/apartamentos/002.jpg') }}" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <h3>Departamentos con vista a la ciudad</h3>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Habitación con sommier de 2 plazas</li>
+                                    <li><i class="fas fa-check"></i> Living comedor, con cama marinera y sofa cama</li>
+                                    <li><i class="fas fa-check"></i> Heladera con freezer</li>
+                                    <li><i class="fas fa-check"></i> Microondas</li>
+                                    <li><i class="fas fa-check"></i> Cocina con horno, cafetera y vajilla completa</li>
+                                    <li><i class="fas fa-check"></i> Baño con ducha</li>
+                                    <li><i class="fas fa-check"></i> Lavadero en el balcón de la cocina</li>
+                                    <li><i class="fas fa-check"></i> Balcones en todos los ambientes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item wow fadeInUp">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="{{ asset('bundles/app/maquetado/img/apartamentos/003.jpg') }}" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <h3>Departamento 4to piso</h3>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Vista panoramica al mar desde todos los ambientes</li>
+                                    <li><i class="fas fa-check"></i> 3 ambientes, capacidad hasta 6 personas</li>
+                                    <li><i class="fas fa-check"></i> Living con grandes ventanales y balcón a la playa</li>
+                                    <li><i class="fas fa-check"></i> Cocina equipada con heladera con freezer</li>
+                                    <li><i class="fas fa-check"></i> Microondas</li>
+                                    <li><i class="fas fa-check"></i> Cocina eléctrica</li>
+                                    <li><i class="fas fa-check"></i> Cafetera y vajilla completa</li>
+                                    <li><i class="fas fa-check"></i> Dormitorio con sommier de 2 plazas</li>
+                                    <li><i class="fas fa-check"></i> Dormitorio con 2 camas de 1 plaza y 2 sommier en el living</li>
+                                    <li><i class="fas fa-check"></i> Baño con ducha</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="informacion">
+                <div class="container wow fadeInUp">
+                    <header class="section-header">
+                        <h2>Villa Gesell</h2>
+                    </header>
+                    <p>Villa Gesell no solo cuenta con las playas mas lindas de la costa atlántica. Arenas finas, medanos, bosque, historia, aventura, diversión. Atracciones para todos los gustos y la mas variada gama de servicios y espectáculos, cines, teatros, restaurantes, balnearios y discos.</p>
+                    <p>De excelente infraestructura turística, cuenta con numerosos hoteles y viviendas para alquiler, campings, y posee una intensa actividad nocturna. Sus lugares de diversión, especialmente para los jóvenes y las familias, marcan la principal característica del lugar.</p>
+                    <p>Las concurridas playas, el movimiento comercial en la avenida 3 y la peatonal, y las numerosas discotecas, contrastan con la tranquilidad de sus barrios residenciales, el paisaje de las dunas, y los bosques de la Reserva Cultural y Forestal Pinar del Norte. Esta Villa, cuenta con 10 km. de amplias playas con muy suave declive y de agradable temperatura. Te esperamos!</p>
+                </div>
+            </section>
+
+            <section id="galeria">
+                <div class="container">
+                    <header class="section-header wow fadeInUp">
+                        <h2>Galería de fotos</h2>
+                    </header>
+                    {{ render(controller('AppBundle:Default:galeria',{galeria_id: 1})) }}
+                </div>
+            </section>
+
+            <section id="ubicacion">
+                <div class="container">
+                    <div class="section-header wow fadeInUp">
+                        <h2>Ubicacion</h2>
+                    </div>
+                </div>
+                <div id="map-container" class="wow fadeInUp"></div>
+            </section>
+
+            <section id="contacto" class="section-bg">
+                <div class="container">
+                    <div class="section-header wow fadeInUp">
+                        <h2>Contacto</h2>
+                    </div>
+                    <div class="row contact-info">
+                        <div class="col-md-4">
+                            <div class="contact-address wow fadeInUp">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <h3>Dirección</h3>
+                                <address>117 y La Playa</address>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-phone wow fadeInUp">
+                                <i class="fas fa-phone"></i>
+                                <h3>Teléfono</h3>
+                                <p>Reservas: <a href="tel:02255 463373">02255.463.373</a></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-email wow fadeInUp">
+                                <i class="far fa-envelope"></i>
+                                <h3>Email</h3>
+                                <p><a href="mailto:info@arenasdemar.com.ar">info@arenasdemar.com.ar</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div id="sendmessage">Su consulta ha sido enviada. Gracias!</div>
+                        <div id="errormessage"></div>
+                        <form id="form_contacto" role="form" class="contactForm" method="post" onsubmit="return validar_form();">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" data-rule="minlen:4" data-msg="Por favor ingrese al menos 4 caracteres"/>
+                                    <div class="validation"></div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Por favor ingrese un email válido"/>
+                                    <div class="validation"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" id="form_mensaje" rows="5" data-rule="required" data-msg="Por favor escriba un mensaje" placeholder="Mensaje"></textarea>
+                                <div class="validation"></div>
+                            </div>
+                            <div class="text-center">
+                                <button class="send" type="submit">Enviar Mensaje</button>
+                                {#<a href="" class="send">Enviar</a>#}
+        						<div class="spinner" id="form_img_loading">
+            						<div class="rect1"></div>
+            						<div class="rect2"></div>
+            						<div class="rect3"></div>
+            						<div class="rect4"></div>
+            						<div class="rect5"></div>
+            					</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+{% endblock %}

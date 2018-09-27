@@ -1,0 +1,21 @@
+{% extends 'AppBundle:Panel:template-listado.html.twig' %}
+
+{% block avanzu_page_title %}
+Promociones
+{% endblock %}
+
+{% block titulo_nuevo_item %}Nueva Promoción{% endblock %}
+{% block avanzu_page_content  %}
+	{% set nombre_entidad = 'promocion' %}
+	{% set nombre_entidad_plural = 'promociones' %}
+	{% set iterables = promociones %}
+	{% set puede_crear = true %}
+	{% set puede_borrar = true %}
+	{% set campos = [
+	    { 'titulo': 'Nombre','campo':'nombre', 'data_info': true},
+	    { 'titulo': 'Generica','campo':'Generica'},
+	] %}
+	{% set form_routing = 'panel_promocion_form' %}
+	{% set delete_routing = 'panel_promocion_borrar' %}
+    {{parent()}}
+{% endblock %}

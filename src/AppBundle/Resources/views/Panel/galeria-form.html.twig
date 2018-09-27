@@ -1,0 +1,9 @@
+{% set titulo_entidad = "Galeria" %}
+{% set link_cancelar = path('panel_galerias') %}
+{% extends 'AppBundle:Panel:template-form.html.twig' %}
+{% block avanzu_page_content %}
+    {{  parent() }}
+{% endblock %}
+{% block avanzu_javascripts_inline %}
+	{{ parent() }}
+{% endblock %}

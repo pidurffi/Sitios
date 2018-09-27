@@ -1,0 +1,51 @@
+fos_js_routing:
+  resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+  
+comur_image:
+    resource: "@ComurImageBundle/Resources/config/routing.yml"
+    prefix:   /
+
+panel_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Panel:index }
+    options:
+      avanzu_admin_route:  welcome 
+panel_homepage2:
+    path:     /
+    defaults: { _controller: AppBundle:Panel:index }
+    options:
+      avanzu_admin_route: avanzu_admin_home 
+      
+      
+logout:
+    path:     /salir
+    defaults: { _controller: AppBundle:Panel:logout }
+    options:
+      avanzu_admin_route: logout
+      
+      
+profile:
+    path:     /mi-perfil
+    defaults: { _controller: AppBundle:Panel:perfil }
+    options:
+      avanzu_admin_route: profile          
+      
+panel_promociones:
+    path:     /promociones
+    defaults: { _controller: AppBundle:Panel:promociones }
+panel_promocion_borrar:
+    path:     /promocion-borrar/{id}
+    defaults: { _controller: AppBundle:Panel:promocionDelete }
+panel_promocion_form:
+    path:     /promocion-form
+    defaults: { _controller: AppBundle:Panel:promocionForm }
+    
+panel_galerias:
+    path:     /galerias
+    defaults: { _controller: AppBundle:Panel:galerias }
+panel_galeria_borrar:
+    path:     /galeria-borrar/{id}
+    defaults: { _controller: AppBundle:Panel:galeriaDelete }
+panel_galeria_form:
+    path:     /galeria-form
+    defaults: { _controller: AppBundle:Panel:galeriaForm }                    

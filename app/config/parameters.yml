@@ -1,0 +1,20 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: bf_arenas
+    database_user: bf_arenas
+    database_password: null
+    mailer_transport: smtp
+    mailer_host: mail.lascaracolas.com.ar 
+    mailer_user: info@lascaracolas.com.ar 
+    mailer_password: Wzy$v#c=+O0B
+    mailer_port: 465
+    mailer_encryption: tls
+    secret: c8ec181666f4523sdfd53c968f237638e7bdae8b80
+    panel.img_usuario: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcpCc0N7KCGr-IUSd-Ng8wRJhhGMDK5_42-WhxST8QoQelGe8u'
+    panel.nombre_sitio: 'Arenas de Mar'
+    panel.login_logo: 'https://www.mardelaspampas.travel/bundles/mdlpsitio/images/header/logo.png'
+    asunto_contacto: Contacto de _nombre_ desde www.lascaracolas.com.ar 
+    contacto_from: info@lascaracolas.com.ar 
+    contacto_to: gabryel@gmail.com

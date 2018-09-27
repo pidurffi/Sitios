@@ -1,0 +1,75 @@
+{% extends 'AvanzuAdminThemeBundle:layout:login-fosuserbundle.html.twig' %}
+{% block avanzu_logo_logins %}<b>{{ panel_nombre_sitio }}</b>{% endblock %}
+{% block avanzu_logo_login %}<img src="{{ panel_login_logo }}">{% endblock %}
+{% block avanzu_login_social_auth %}
+{% endblock %}
+{% block avanzu_login_actions %}
+{% endblock %}
+
+
+{#
+{% extends 'AvanzuAdminThemeBundle:layout:login-layout.html.twig' %}
+
+{% block titles %}{{ panel_nombre_sitio }} - Panel de control{% endblock %}
+{#
+{% block avanzu_logo_login %}<img src="https://www.mardelaspampas.travel/bundles/mdlpsitio/images/header/logo.png" />{% endblock %}
+{% block avanzu_login_box_msg %}
+	{{ 'Ingrese para iniciar su sesión'|trans({}, 'AvanzuAdminTheme') }}
+    {% if error|default(false) %}
+       <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+{% endblock %}
+
+{% block page_content %}
+
+<div class="login-box">
+    <div class="login-logo">
+        <a href="/panel/"><img src="{{ panel_login_logo }}"></a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+        <p class="login-box-msg">
+        Ingrese para iniciar su sesión
+        {% if error|default(false) %}
+       	<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+        </p>
+
+        <form action="{{ path('fos_user_security_check') }}" method="post">
+        
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+            <div class="form-group has-feedback">
+                <input type="text" name="_username" class="form-control" placeholder="Email" value="{{ last_username }}">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input name="_password" type="password" class="form-control" placeholder="Password">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="checkbox icheck">
+                        <label>
+                            <input type="checkbox" checked id="remember_me" name="_remember_me" value="on" />Recordarme
+                        </label>
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-xs-4">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
+                </div>
+                <!-- /.col -->
+            </div>
+            
+        </form>
+	</div>
+    <!-- /.login-box-body -->
+</div>
+{% endblock %}
+{% block javascripts_inlines %}
+<script>
+$(document).ready(function() {
+	$('input').iCheck();
+});
+</script>
+{% endblock %}#}
