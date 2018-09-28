@@ -37,8 +37,8 @@ class PromocionType extends AbstractType
                 'webDir' => 'uploads/promociones'
             ),
             'cropConfig' => array(
-                'minWidth' => 200,
-                'minHeight' => 200
+                'minWidth' => $options['imagen_ancho'],
+                'minHeight' => $options['imagen_alto']
             ),
         ));
         
@@ -50,7 +50,9 @@ class PromocionType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Promocion'
+            'data_class' => 'AppBundle\Entity\Promocion',
+        	'imagen_ancho' => '200',
+        	'imagen_alto' => '200'
         ));
     }
 

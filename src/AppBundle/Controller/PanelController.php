@@ -74,7 +74,11 @@ class PanelController extends PanelBaseController
                 return new RedirectResponse($this->generateUrl('homepage'));
             }
         }
-        $form = $this->createForm(PromocionType::class,$promocion);
+        $form = $this->createForm(PromocionType::class,$promocion,
+        		array(
+        				'imagen_ancho'=>$this->container->getParameter('promocion_imagen_ancho'),
+        				'imagen_alto'=>$this->container->getParameter('promocion_imagen_alto')
+        		));
         
         $form->handleRequest($request);
         if(($form->isSubmitted())&&($form->isValid())) {
@@ -133,7 +137,13 @@ class PanelController extends PanelBaseController
                 return new RedirectResponse($this->generateUrl('homepage'));
             }
         }
-        $form = $this->createForm(GaleriaType::class,$galeria);
+        $form = $this->createForm(GaleriaType::class,$galeria,
+        		array(
+        				'imagen_ancho'=>$this->container->getParameter('galeria_imagen_ancho'),
+        				'imagen_alto'=>$this->container->getParameter('galeria_imagen_alto'),
+        				'th1_ancho'=>$this->container->getParameter('galeria_th1_ancho'),
+        				'th1_alto'=>$this->container->getParameter('galeria_th1_alto')
+        		));
         
         $form->handleRequest($request);
         if(($form->isSubmitted())&&($form->isValid())) {

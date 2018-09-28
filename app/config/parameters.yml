@@ -18,3 +18,9 @@ parameters:
     asunto_contacto: Contacto de _nombre_ desde www.lascaracolas.com.ar 
     contacto_from: info@lascaracolas.com.ar 
     contacto_to: gabryel@gmail.com
+    galeria_imagen_ancho: 680
+    galeria_imagen_alto: 390
+    galeria_th1_ancho: 400
+    galeria_th1_alto: 229
+    promocion_imagen_ancho: 200
+    promocion_imagen_alto: 200

@@ -28,12 +28,12 @@ class GaleriaType extends AbstractType
         					'webDir' => 'uploads/galerias',
         			),
         			'cropConfig'=>array(
-        					'minWidth' => 680,
-        					'minHeight' => 390,
+        					'minWidth' => $options['imagen_ancho'],
+        					'minHeight' => $options['imagen_alto'],
         					'thumbs' => array(
         							'0' => array(
-        									'maxWidth' => 400,
-        									'maxHeight' => 229,
+        									'maxWidth' => $options['th1_ancho'],
+        									'maxHeight' => $options['th1_alto'],
         									'useAsFieldImage' => true
         							)
         					)
@@ -49,7 +49,11 @@ class GaleriaType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Galeria'
+            'data_class' => 'AppBundle\Entity\Galeria',
+        		'imagen_ancho' => '680',
+        		'imagen_alto' => '390',
+        		'th1_ancho' => '400',
+        		'th1_alto' => '229',
         ));
         
     }
