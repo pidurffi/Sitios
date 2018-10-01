@@ -2,6 +2,8 @@
 
 // COLORS
 
+$grey: #1c1c1c;
+$solarGold: #afa278;
 $blue: #2690B7;
 $blue2: #0d779e;
 $blue3: #3fa9d0;
@@ -9,13 +11,13 @@ $yellow: #E7C62B;
 $white: #ffffff;
 $font-black: #191919;
 $font-grey: #7C7B7B;
-$section-bg: #1F1F2C;
+$section-bg: #1f1f1f;
 $footer-bg: #2e2e3b;
 
 // FUENTES
 
 body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Lato', sans-serif;
 }
 
 a {
@@ -25,17 +27,18 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Lora', serif;
-	font-weight: 400;
+	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
 }
 
 p {
+	font-size: 16px;
 	color: $font-grey;
 }
 
 .section-header {
 	h2 {
-		margin-bottom: 40px;
+		margin-bottom: 10px;
 		font-size: 40px;
 		text-align: center;
 	}
@@ -66,7 +69,7 @@ body {
 	width: 44px;
 	height: 44px;
 	font-size: 16px;
-	background-color: $blue;
+	background-color: $solarGold;
 	z-index: 1000;
 	@include border-radius(50%);
 	@include box-shadow(0 0 10px 2px rgba(0, 0, 0, 0.5));
@@ -76,50 +79,54 @@ body {
 	}
 }
 #header {
-	position: fixed;
+	position: absolute;
 	left: 0;
 	top: 0;
 	right: 0;
+	padding: 10px 0;
 	z-index: 100;
-	background-color: $white;
-	@include box-shadow(0 0 20px 0 rgba(0, 0, 0, 0.5));
-	.container {
-		display: flex;
-		align-items: center;
-	}
+	background-color: transparent;
+	@include transition(background-color .25s ease, box-shadow .25s ease);
+	@include box-shadow(0 0 20px 0 rgba(0, 0, 0, 0));
 	&.header-scrolled {
-		.container {
-			#logo {
-				&:before {
-					border-width: 0 86px 0 86px;
-				}
-			}
-		}
+		position: fixed;
+		top: 0;
+		background-color: $solarGold;
+		@include box-shadow(0 0 20px 0 rgba(0, 0, 0, 0.5));
 	}
 }
 #logo {
 	position: relative;
-	@include transform(scale(.9));
-	&:before {
-		position: absolute;
-		top: 100%;
+	margin: 10px 0;
+	width: 250px;
+	@include transition(transform .25s ease);
+	img {
 		display: block;
-		content: '';
-		width: 0;
-		height: 0;
-		border-style: solid;
-		border-width: 25px 86px 0 86px;
-		border-color: $white transparent transparent transparent;
-		@include transition(border-width .25s ease);
+		width: 100%;
+	}
+	@media (min-width: 768px) {
+		margin: 10px auto;
+		width: 400px;
 	}
 }
+
+body {
+	&.interna {
+		#intro {
+			.carousel-item {
+				height: 70vh;
+			}
+		}
+	}
+}
+
 #intro {
 	display: table;
 	width: 100%;
 	background: #000;
 	.carousel-item {
 		width: 100%;
-		height: 75vh;
+		height: 100vh;
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -144,6 +151,44 @@ body {
 		top: 0;
 		left: 0;
 		right: 0;
+		p {
+			font-size: 16px;
+			font-weight: 400;
+			text-align: center;
+			span {
+				font-family: 'Raleway', sans-serif;
+				text-transform: uppercase;
+				font-size: 40px;
+				font-weight: 700;
+			}
+			a {
+				display: inline-block;
+				margin-top: 40px;
+				padding: 10px 30px;
+				font-size: 20px;
+				font-weight: 300;
+				text-transform: uppercase;
+				color: $white;
+				border: 2px solid $white;
+				background-color: transparent;
+				@include transition(background-color .25s ease, color .25s ease);
+				&:hover {
+					color: $section-bg;
+					background-color: $white;
+				}
+			}
+		}
+		@media (min-width: 768px) {
+			p {
+				font-size: 24px;
+				span {
+					font-size: 60px;
+				}
+				a {
+					padding: 20px 60px;
+				}
+			}
+		}
 	}
 	.carousel-content {
 		text-align: center;
@@ -208,15 +253,13 @@ body {
 	.carousel-control-next {
 		width: 10%;
 	}
-	.carousel-control-next-icon {
-		background: none;
-		font-size: 32px;
+	.carousel-control-next-icon, .carousel-control-prev-icon {
+		width: auto;
+		height: auto;
+		font-size: 60px;
 		line-height: 1;
-	}
-	.carousel-control-prev-icon {
+		color: $solarGold;
 		background: none;
-		font-size: 32px;
-		line-height: 1;
 	}
 	.carousel-indicators {
 		li {
@@ -236,29 +279,35 @@ body {
 	}
 }
 #nav-menu-container {
-	margin-left: auto;
+	text-align: center;
 	ul {
 		margin: 0;
 		padding: 0;
 		list-style-type: none;
 		li {
 			display: inline-block;
-			margin-left: 20px;
+			margin-left: 40px;
 			padding: 10px;
 			background-color: transparent;
 			@include transition(background-color .5s ease);
 			a {
 				display: inline-block;
+				padding-bottom: 2px;
 				font-size: 14px;
-				font-weight: 800;
 				line-height: 14px;
-				color: $blue;
+				color: $white;
 				text-transform: uppercase;
+				border-bottom: 1px solid transparent;
+				@include transition(border-color .25s ease, color .25s ease);
 			}
 			&.menu-active {
-				background-color: $blue;
 				a {
-					color: $white;
+					border-bottom-color: $white
+				}
+			}
+			&:hover {
+				a {
+					border-bottom-color: $white;
 				}
 			}
 			&:first-child {
@@ -270,7 +319,7 @@ body {
 #mobile-nav-toggle {
 	position: fixed;
 	right: 20px;
-	top: 6px;
+	top: 16px;
 	z-index: 999;
 	margin: 0;
 	padding: 0;
@@ -278,11 +327,10 @@ body {
 	background: none;
 	font-size: 24px;
 	display: none;
-	transition: all 0.4s;
 	outline: none;
 	cursor: pointer;
 	i {
-		color: #424242;
+		color: $white;
 	}
 }
 #mobile-nav {
@@ -314,7 +362,6 @@ body {
 				display: block;
 				outline: none;
 				font-weight: 700;
-				font-family: "Montserrat", sans-serif;
 				&:hover {
 					color: $white;
 				}
@@ -358,61 +405,63 @@ body {
 }
 
 section {
-	padding: 40px 0;
+	padding: 20px 0;
 	&#intro {
 		padding: 0;
 	}
 	&.section-bg {
 		background-color: $section-bg;
 	}
+	@media (min-width: 768px) {
+		padding: 60px 0;
+		#intro {
+			padding: 0;
+		}
+	}
 }
 
 #promociones {
-	.container {
-		.row {
-			.col-md-4 {
-				cursor: pointer;
-				@include transition(background-color .25s ease-in);
-				&:nth-child(1) {
-					background-color: $blue2;
-				}
-				&:nth-child(2) {
-					background-color: $blue;
-				}
-				&:nth-child(3) {
-					background-color: $blue3;
-				}
-				&:hover {
-					background-color: $yellow;
-				}
-			}
-		}
+	background-color: $section-bg;
+	.container-fluid {
+		padding-left: 40px;
+		padding-right: 40px;
 	}
-	.about-col {
-		padding: 40px;
-		text-align: center;
-		h2 {
-			font-size: 24px;
-			font-weight: 700;
-			color: $white;
-		}
-		p {
-			margin-top: 20px;
-			font-size: 14px;
-			line-height: 30px;
-			color: $white;
-		}
-		i {
-			margin-bottom: 40px;
-			font-size: 60px;
-			color: $white;
-		}
+	.promocion {
+	    position: relative;
+	    padding: 40px;
+	    height: 100%;
+	    text-align: center;
+	    border: 1px solid #2f2f2f;
+	    cursor: pointer;
+	    @include transition(border-color .25s ease);
+	    i {
+	    	display: block;
+	    	margin-bottom: 20px;
+	    	font-size: 60px;
+	    	color: $solarGold;
+	    }
+	    h2 {
+	    	margin-bottom: 20px;
+	    	font-size: 24px;
+	    	font-weight: 300;
+	    	color: $solarGold;
+	    }
+	    .fecha {
+	    	display: block;
+	    	margin-bottom: 20px;
+	    	font-weight: 700;
+	    	text-transform: uppercase;
+	    	color: $font-grey;
+	    }
+	    &:hover {
+	    	border-color: $solarGold;
+	    }
 	}
 }
 
 #informacion {
 	padding: 10px;
-	background-image: url(../img/informacion/001.jpg);
+	background-image: url(../img/bosque.jpg);
 	background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -420,11 +469,11 @@ section {
     .container {
     	padding: 10px;
     	text-align: center;
-    	background-color: rgba(63, 169, 208, 0.8);
     }
     header {
     	h2 {
     		color: $white;
+    		@include text-shadow(2px 2px 10px rgba(00,00,00,0.5));
     	}
     }
     p {
@@ -438,97 +487,153 @@ section {
     }
 }
 
-#apartamentos {
-	.item {
-		margin-top: 20px;
-		padding: 20px;
-		background-color: #eeeeee;
-		img {
-			width: 100%;
-			display: block;
-		}
-		h3 {
-			margin-top: 10px;
-			font-size: 20px;
-		}
-		ul {
-			margin: 0;
-			padding: 0;
-			column-count: 1;
-			list-style-type: none;
-			li {
-				display: flex;
-				align-items: baseline;
-				font-size: 14px;
-				i {
-					margin-right: 10px;
-					color: $blue;
-				}
+#complejo {
+	h3 {
+		margin: 20px 0;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		column-count: 1;
+		li {
+			display: flex;
+			align-items: baseline;
+			margin-bottom: 20px;
+			i {
+				margin-right: 10px;
+				color: $solarGold;
 			}
 		}
 	}
 	@media (min-width: 768px) {
-		.item {
-			h3 {
-				margin-top: 0;
+		ul {
+			column-count: 2;
+		}
+	}
+}
+
+.my-gallery {
+	margin-top: 40px;
+	figure {
+		a {
+			overflow: hidden;
+			display: block;
+			img {
+				@include transition(transform .25s ease);
 			}
-			ul {
-				column-count: 2;
+			&:hover {
+				img {
+					@include transform(scale(1.1));
+				}
+			}
+		}
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+	.mobile-label {
+		display: none;
+	}
+	@media (max-width: 767px) {
+		overflow-x: hidden;
+		figure {
+			display: none;
+			padding: 0;
+			a {
+				border: 0;
+			}
+			&.mobile-thumb {
+				display: block;
+				width: 100%;
+				.mobile-label {
+					position: absolute;
+					top: 50%;
+					display: block;
+					margin-top: -20px;
+					padding: 10px;
+					width: 100%;
+					font-size: 20px;
+					font-weight: 700;
+					line-height: 20px;
+					color: $blue;
+					text-transform: uppercase;
+					text-align: center;
+					background-color: rgba(00,00,00,0.8);
+					&:hover {
+						cursor: pointer;
+					}
+				}
 			}
 		}
 	}
 }
 
-#galeria {
-	padding-bottom: 20px;
-	.my-gallery {
+
+#cabanas {
+	.item-cabanas {
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid $solarGold;
 		figure {
-			a {
-				display: block;
-				border: 4px solid $blue;
-				@include transition(border-color .25s ease-in);
-				&:hover {
-					border-color: $yellow;
-				}
-			}
+			margin: 0;
 			img {
 				display: block;
 				width: 100%;
 			}
 		}
-		.mobile-label {
-			display: none;
-		}
-		@media (max-width: 767px) {
-			overflow-x: hidden;
-			figure {
-				display: none;
-				padding: 0;
-				a {
-					border: 0;
-				}
-				&.mobile-thumb {
+		.item-cabanas__content {
+			padding: 10px 0;
+			h3 {
+				color: $solarGold;
+				font-weight: 300;
+				span {
 					display: block;
-					width: 100%;
-					.mobile-label {
-						position: absolute;
-						top: 50%;
-						display: block;
-						margin-top: -20px;
-						padding: 10px;
-						width: 100%;
-						font-size: 20px;
-						font-weight: 700;
-						line-height: 20px;
-						color: $blue;
-						text-transform: uppercase;
-						text-align: center;
-						background-color: rgba(00,00,00,0.8);
-						&:hover {
-							cursor: pointer;
-						}
-					}
+					font-size: 50px;
+					font-weight: 700;
 				}
+			}
+			.info {
+				display: block;
+				margin-bottom: 20px;
+				i {
+					color: $section-bg;
+				}
+				.info__text {
+					font-size: 12px;
+					margin-left: 5px;
+					color: $font-grey;
+					text-transform: uppercase;
+				}
+			}
+			a {
+				display: inline-block;
+				margin-top: 20px;
+				padding: 10px 40px;
+				font-size: 20px;
+				font-weight: 300;
+				text-transform: uppercase;
+				color: $solarGold;
+				border: 2px solid $solarGold;
+				background-color: transparent;
+				@include transition(background-color .25s ease, color .25s ease);
+				&:hover {
+					color: $white;
+					background-color: $solarGold;
+				}
+			}
+		}
+		&:last-child {
+			margin-bottom: 0;
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+	}
+	@media (min-width: 768px) {
+		.item-cabanas {
+			.item-cabanas__content {
+				padding: 20px;
 			}
 		}
 	}
@@ -542,9 +647,6 @@ section {
 }
 
 #contacto {
-	.section-header {
-		color: $white;
-	}
 	.contact-info {
 		margin-bottom: 20px;
 		text-align: center;
@@ -564,7 +666,6 @@ section {
 		h3 {
 			font-size: 18px;
 			margin-bottom: 15px;
-			font-weight: bold;
 			text-transform: uppercase;
 			color: #999;
 		}
@@ -591,7 +692,6 @@ section {
 			display: none;
 			text-align: center;
 			padding: 15px;
-			font-weight: 600;
 			margin-bottom: 15px;
 		}
 		#errormessage {
@@ -600,7 +700,6 @@ section {
 			border: 1px solid red;
 			text-align: center;
 			padding: 15px;
-			font-weight: 600;
 			margin-bottom: 15px;
 		}
 		#sendmessage.show {
@@ -616,7 +715,6 @@ section {
 			color: red;
 			display: none;
 			margin: 0 0 20px;
-			font-weight: 400;
 			font-size: 13px;
 		}
 		input {
@@ -636,10 +734,10 @@ section {
 			border: 0;
 			color: #fff;
 			cursor: pointer;
-			background-color: $blue;
+			background-color: $solarGold;
 			@include transition(background-color .25s ease-in);
 			&:hover {
-				background-color: $yellow;
+				background-color: $grey;
 			}
 		}
 	}
@@ -652,38 +750,69 @@ section {
 
 footer {
 	padding: 40px 0;
-	background-color: $footer-bg;
-	.footer-nav {
-		margin: 0;
-		padding: 0;
-		text-align: center;
-		li {
-			display: block;
-			a {
-				font-size: 14px;
-				text-transform: uppercase;
-				color: $white;
-				border-bottom: 1px solid transparent;
-				@include transition(border-color .25s ease-in);
-				&:hover {
-					border-color: $white;
-				}
-			}
-		}
+	text-align: center;
+	background-color: $section-bg;
+	.logo-footer {
+		display: block;
+		margin: 0 auto 20px auto;
+		width: 100%;
+	}
+	h3 {
+		font-size: 24px;
+		color: $white;
 	}
 	p {
-		margin-top: 20px;
-		text-align: center;
-		color: #606069;
+		display: block;
+		align-items: baseline;
+		margin-top: 0;
+		font-size: 14px;
+		color: #898989;
+		.material-icons {
+			position: relative;
+			top: 3px;
+			margin-right: 10px;
+			font-size: 14px;
+			color: $solarGold;
+		}
 	}
-	@media (min-width: 768px) {
-		.footer-nav {
-			li {
-				display: inline-block;
-				padding: 0 10px;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		li {
+			margin-bottom: 10px;
+			a {
+				text-transform: uppercase;
 			}
 		}
 	}
+	a {
+		font-size: 14px;
+		color: #898989;
+		@include transition(color .25s ease);
+		&:hover {
+			color: $white;
+		}
+	}
+	@media (min-width: 768px) {
+		text-align: left;
+		.logo-footer {
+			margin: 0 auto;
+		}
+		p {
+			display: flex;
+		}
+	}
+}
+
+.tab-content > .tab-pane {
+	overflow: hidden;
+    display: block;
+    height: 0;
+}
+
+.tab-content > .active {
+    height: auto;
 }
 
 @media (max-width: 768px) {
@@ -720,7 +849,7 @@ footer {
 	}*/
 	#intro {
 		p {
-			width: 60%;
+			width: 100%;
 		}
 		.carousel-control-prev {
 			width: 5%;
@@ -740,7 +869,7 @@ footer {
 	}
 }
 @media (min-width: 768px) {
-	#contact {
+	#contacto {
 		.contact-address {
 			padding: 20px 0;
 		}
@@ -754,7 +883,6 @@ footer {
 		}
 	}
 }
-
 
 .spinner {
 	position: absolute;
@@ -773,7 +901,7 @@ footer {
 	-o-transition: visibility 200ms ease, opacity 200ms ease;
 	transition: visibility 200ms ease, opacity 200ms ease;
 	> div {
-		background-color: #666;
+		background-color: #333;
 		height: 100%;
 		width: 6px;
 		display: inline-block;
