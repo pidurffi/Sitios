@@ -2,6 +2,8 @@
 
 // COLORS
 
+$grey: #1c1c1c;
+$merimarBlue: #429198;
 $blue: #2690B7;
 $blue2: #0d779e;
 $blue3: #3fa9d0;
@@ -9,7 +11,7 @@ $yellow: #E7C62B;
 $white: #ffffff;
 $font-black: #191919;
 $font-grey: #7C7B7B;
-$section-bg: #1F1F2C;
+$section-bg: #f1f1f1;
 $footer-bg: #2e2e3b;
 
 // FUENTES
@@ -25,17 +27,17 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Lora', serif;
-	font-weight: 400;
+	font-family: 'Yellowtail', cursive;
 }
 
 p {
+	font-size: 14px;
 	color: $font-grey;
 }
 
 .section-header {
 	h2 {
-		margin-bottom: 40px;
+		margin-bottom: 10px;
 		font-size: 40px;
 		text-align: center;
 	}
@@ -66,7 +68,7 @@ body {
 	width: 44px;
 	height: 44px;
 	font-size: 16px;
-	background-color: $blue;
+	background-color: $merimarBlue;
 	z-index: 1000;
 	@include border-radius(50%);
 	@include box-shadow(0 0 10px 2px rgba(0, 0, 0, 0.5));
@@ -76,42 +78,34 @@ body {
 	}
 }
 #header {
-	position: fixed;
+	position: absolute;
 	left: 0;
-	top: 0;
+	top: 50px;
 	right: 0;
+	padding: 10px 0;
 	z-index: 100;
-	background-color: $white;
-	@include box-shadow(0 0 20px 0 rgba(0, 0, 0, 0.5));
+	background-color: transparent;
+	@include transition(background-color .25s ease, box-shadow .25s ease);
+	@include box-shadow(0 0 20px 0 rgba(0, 0, 0, 0));
 	.container {
 		display: flex;
 		align-items: center;
 	}
 	&.header-scrolled {
+		position: fixed;
+		top: 0;
+		background-color: $grey;
+		@include box-shadow(0 0 20px 0 rgba(0, 0, 0, 0.5));
 		.container {
 			#logo {
-				&:before {
-					border-width: 0 86px 0 86px;
-				}
+				@include transform(scale(0.8));
 			}
 		}
 	}
 }
 #logo {
 	position: relative;
-	@include transform(scale(.9));
-	&:before {
-		position: absolute;
-		top: 100%;
-		display: block;
-		content: '';
-		width: 0;
-		height: 0;
-		border-style: solid;
-		border-width: 25px 86px 0 86px;
-		border-color: $white transparent transparent transparent;
-		@include transition(border-width .25s ease);
-	}
+	@include transition(transform .25s ease);
 }
 #intro {
 	display: table;
@@ -144,6 +138,19 @@ body {
 		top: 0;
 		left: 0;
 		right: 0;
+		p {
+			font-size: 24px;
+			font-weight: 700;
+			text-align: center;
+			text-transform: uppercase;
+			@include text-shadow(2px 2px 10px rgba(00,00,00,0.5));
+			span {
+				font-family: 'Yellowtail', cursive;
+				font-weight: 400;
+				font-size: 80px;
+				text-transform: none;
+			}
+		}
 	}
 	.carousel-content {
 		text-align: center;
@@ -249,28 +256,40 @@ body {
 			@include transition(background-color .5s ease);
 			a {
 				display: inline-block;
+				padding-bottom: 2px;
 				font-size: 14px;
-				font-weight: 800;
+				font-weight: 400;
 				line-height: 14px;
-				color: $blue;
+				color: $white;
 				text-transform: uppercase;
+				border-bottom: 1px solid transparent;
+				@include transition(border-color .25s ease, color .25s ease);
 			}
-			&.menu-active {
-				background-color: $blue;
+			&:hover {
 				a {
-					color: $white;
+					border-bottom-color: $white;
 				}
 			}
 			&:first-child {
 				margin-left: 0;
 			}
+			&:last-child {
+				background-color: $merimarBlue;
+				&:hover {
+					background-color: $white;
+					a {
+						color: $merimarBlue;
+						border-bottom-color: transparent;
+					}
+				}
+			}
 		}
 	}
 }
 #mobile-nav-toggle {
-	position: fixed;
+	position: absolute;
 	right: 20px;
-	top: 6px;
+	top: 62px;
 	z-index: 999;
 	margin: 0;
 	padding: 0;
@@ -278,11 +297,14 @@ body {
 	background: none;
 	font-size: 24px;
 	display: none;
-	transition: all 0.4s;
 	outline: none;
 	cursor: pointer;
 	i {
-		color: #424242;
+		color: $white;
+	}
+	&.nav-scrolled {
+		position: fixed;
+		top: 16px;
 	}
 }
 #mobile-nav {
@@ -358,7 +380,7 @@ body {
 }
 
 section {
-	padding: 40px 0;
+	padding: 60px 0;
 	&#intro {
 		padding: 0;
 	}
@@ -368,51 +390,71 @@ section {
 }
 
 #promociones {
-	.container {
-		.row {
-			.col-md-4 {
-				cursor: pointer;
-				@include transition(background-color .25s ease-in);
-				&:nth-child(1) {
-					background-color: $blue2;
-				}
-				&:nth-child(2) {
-					background-color: $blue;
-				}
-				&:nth-child(3) {
-					background-color: $blue3;
-				}
-				&:hover {
-					background-color: $yellow;
+	.promocion {
+	    position: relative;
+	    height: 100%;
+	    background-color: #f8f8f8;
+		figure {
+			overflow: hidden;
+			margin: 0;
+			img {
+				display: block;
+				width: 100%;
+				@include transition(transform .25s ease);
+			}
+		}
+		.promocion__content {
+			padding: 10px;
+			background-color: #f8f8f8;
+			.fecha {
+				font-size: 12px;
+				font-weight: 700;
+				text-transform: uppercase;
+				color: #aaa;
+			}
+			h2 {
+				font-size: 30px;
+				color: $merimarBlue;
+			}
+			p {
+				font-size: 14px;
+				font-weight: 300;
+				color: #858585;
+			}
+			a {
+				display: flex;
+				align-items: center;
+				font-size: 12px;
+				font-weight: 700;
+				color: $merimarBlue;
+				text-transform: uppercase;
+				i {
+					margin-left: 10px;
+					font-size: 20px;
+					@include transition(margin-left .25s ease);
 				}
 			}
 		}
-	}
-	.about-col {
-		padding: 40px;
-		text-align: center;
-		h2 {
-			font-size: 24px;
-			font-weight: 700;
-			color: $white;
-		}
-		p {
-			margin-top: 20px;
-			font-size: 14px;
-			line-height: 30px;
-			color: $white;
-		}
-		i {
-			margin-bottom: 40px;
-			font-size: 60px;
-			color: $white;
+		&:hover {
+			figure {
+				img {
+					@include transform(scale(1.2));
+				}
+			}
+			.promocion__content {
+				a {
+					i {
+						margin-left: 20px;
+					}
+				}
+			}
 		}
 	}
 }
 
 #informacion {
 	padding: 10px;
-	background-image: url(../img/informacion/001.jpg);
+	background-image: url(../img/playa.jpg);
 	background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -420,11 +462,11 @@ section {
     .container {
     	padding: 10px;
     	text-align: center;
-    	background-color: rgba(63, 169, 208, 0.8);
     }
     header {
     	h2 {
     		color: $white;
+    		@include text-shadow(2px 2px 10px rgba(00,00,00,0.5));
     	}
     }
     p {
@@ -438,34 +480,35 @@ section {
     }
 }
 
-#apartamentos {
-	.item {
-		margin-top: 20px;
-		padding: 20px;
-		background-color: #eeeeee;
-		img {
-			width: 100%;
-			display: block;
-		}
-		h3 {
-			margin-top: 10px;
-			font-size: 20px;
-		}
-		ul {
-			margin: 0;
-			padding: 0;
-			column-count: 1;
-			list-style-type: none;
-			li {
-				display: flex;
-				align-items: baseline;
-				font-size: 14px;
-				i {
-					margin-right: 10px;
-					color: $blue;
-				}
-			}
-		}
+#habitaciones {
+	.nav-tabs {
+		border-bottom: 1px solid $merimarBlue;
+	}
+
+	.nav-pills .nav-link {
+		@include border-radius(0);
+	}
+	.nav-pills .nav-link.active {
+		color: $white;
+	}
+	.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+		background-color: $merimarBlue;
+	}
+	.nav-tabs .nav-link {
+		width: 33.33333%;
+		padding-left: 0;
+		padding-right: 0;
+		font-size: 12px;
+		text-align: center;
+		color: $grey;
+	}
+	.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+		color: $white;
+		border-color: $merimarBlue;
+		background-color: $merimarBlue;
+	}
+	.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+		border-color: $merimarBlue;
 	}
 	@media (min-width: 768px) {
 		.item {
@@ -476,19 +519,151 @@ section {
 				column-count: 2;
 			}
 		}
+		.nav-tabs .nav-link {
+			width: auto;
+			padding: .5rem 1rem;
+			font-size: 16px;
+		}
 	}
 }
 
-#galeria {
+.ficha-layout {
+	h4{
+		margin: 50px 0px 20px 0px;
+	}
+	.owl-carousel {
+		overflow: hidden;
+		.owl-nav {
+			.owl-prev, .owl-next {
+				position: absolute;
+				top: 0;
+				border: 0;
+				width: 40px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100%;
+				i {
+					font-size: 60px;
+					color: $merimarBlue;
+					@include transition(color .25s ease);	
+				}
+				&:hover {
+					i {
+						color: #fff;
+					}
+				}
+			}
+			.owl-prev {
+				left: 0;
+			}
+			.owl-next {
+				right: 0;
+			}
+		}
+	}
+	h3 {
+		margin-top: 20px;
+	}
+	p {
+		margin-top: 10px;
+	}
+	.main-list {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		column-count: 1;
+		li {
+			display: flex;
+			align-items: baseline;
+			margin: 0 0 10px 0;
+			font-size: 14px;
+			line-height: 20px;
+			color: $font-grey;
+			i {
+				margin-right: 5px;
+				color: $merimarBlue;
+			}
+		}
+	}
+	.ficha-destacado {
+		margin: 20px 0;
+		ul {
+			margin: 0;
+			padding: 10px;
+			list-style-type: none;
+			column-count: 1;
+			background-color: #f1f1f1;
+			li {
+				color: #111;
+				font-size: 14px;
+				i {
+					margin-right: 5px;
+					color: $merimarBlue;
+				}
+			}
+			&.lista-destacada {
+				background-color: #111;
+				li {
+					display: flex;
+					align-items: center;
+					color: #fff;
+				}
+			}
+		}
+		@media (min-width: 768px) {
+			margin-bottom: 0;
+			ul {
+				column-count: 2;
+			}
+		}
+	}
+	@media (min-width: 768px) {
+		.main-list {
+			column-count: 2;
+		}
+	}
+}
+
+#servicios {
+	ul {
+		margin: 0;
+		padding: 0;
+		column-count: 1;
+		list-style-type: none;
+		li {
+			display: flex;
+			align-items: baseline;
+			margin-bottom: 20px;
+			font-size: 18px;
+			i {
+				margin-right: 10px;
+				font-size: 20px;
+				color: $merimarBlue;
+			}
+		}
+	}
+	@media (min-width: 768px) {
+		ul {
+			column-count: 3;
+		}
+	}
+}
+
+#hotel {
 	padding-bottom: 20px;
 	.my-gallery {
 		figure {
 			a {
+				overflow: hidden;
 				display: block;
-				border: 4px solid $blue;
-				@include transition(border-color .25s ease-in);
+				img {
+					@include transition(transform .25s ease);
+				}
 				&:hover {
-					border-color: $yellow;
+					img {
+						@include transform(scale(1.1));
+					}
 				}
 			}
 			img {
@@ -542,9 +717,6 @@ section {
 }
 
 #contacto {
-	.section-header {
-		color: $white;
-	}
 	.contact-info {
 		margin-bottom: 20px;
 		text-align: center;
@@ -636,10 +808,10 @@ section {
 			border: 0;
 			color: #fff;
 			cursor: pointer;
-			background-color: $blue;
+			background-color: $merimarBlue;
 			@include transition(background-color .25s ease-in);
 			&:hover {
-				background-color: $yellow;
+				background-color: $grey;
 			}
 		}
 	}
@@ -652,38 +824,55 @@ section {
 
 footer {
 	padding: 40px 0;
-	background-color: $footer-bg;
-	.footer-nav {
-		margin: 0;
-		padding: 0;
-		text-align: center;
-		li {
-			display: block;
-			a {
-				font-size: 14px;
-				text-transform: uppercase;
-				color: $white;
-				border-bottom: 1px solid transparent;
-				@include transition(border-color .25s ease-in);
-				&:hover {
-					border-color: $white;
-				}
-			}
-		}
+	text-align: center;
+	background-color: $grey;
+	.logo-footer {
+		display: block;
+		margin: 10px auto;
+	}
+	h3 {
+		font-size: 24px;
+		color: $white;
 	}
 	p {
 		margin-top: 20px;
-		text-align: center;
-		color: #606069;
-	}
-	@media (min-width: 768px) {
-		.footer-nav {
-			li {
-				display: inline-block;
-				padding: 0 10px;
-			}
+		font-size: 14px;
+		color: #858585;
+		span {
+			color: $white;
 		}
 	}
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		li {
+			margin-bottom: 10px;
+		}
+	}
+	a {
+		font-size: 14px;
+		color: $merimarBlue;
+		border-bottom: 1px solid transparent;
+		@include transition(border-bottom-color .25s ease);
+		&:hover {
+			color: $merimarBlue;
+			border-bottom-color: $merimarBlue;
+		}
+	}
+	@media (min-width: 768px) {
+		text-align: left;
+	}
+}
+
+.tab-content > .tab-pane {
+	overflow: hidden;
+    display: block;
+    height: 0;
+}
+
+.tab-content > .active {
+    height: auto;
 }
 
 @media (max-width: 768px) {
@@ -740,7 +929,7 @@ footer {
 	}
 }
 @media (min-width: 768px) {
-	#contact {
+	#contacto {
 		.contact-address {
 			padding: 20px 0;
 		}
@@ -754,7 +943,6 @@ footer {
 		}
 	}
 }
-
 
 .spinner {
 	position: absolute;
@@ -773,7 +961,7 @@ footer {
 	-o-transition: visibility 200ms ease, opacity 200ms ease;
 	transition: visibility 200ms ease, opacity 200ms ease;
 	> div {
-		background-color: #666;
+		background-color: #333;
 		height: 100%;
 		width: 6px;
 		display: inline-block;

@@ -1,5 +1,26 @@
 jQuery(document).ready(function( $ ) {
 
+  $(".ficha-carousel").owlCarousel({
+    loop: true,
+    items: 1,
+    nav: true,
+    navText : ["<i class='fas fa-angle-left'></i>","<i class='fas fa-angle-right'></i>"]
+  });
+
+  $(".ficha-carousel-dos").owlCarousel({
+    loop: true,
+    items: 1,
+    nav: true,
+    navText : ["<i class='fas fa-angle-left'></i>","<i class='fas fa-angle-right'></i>"]
+  })
+
+  $(".ficha-carousel-tres").owlCarousel({
+    loop: true,
+    items: 1,
+    nav: true,
+    navText : ["<i class='fas fa-angle-left'></i>","<i class='fas fa-angle-right'></i>"]
+  });;
+
   // Back to top button
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
@@ -101,10 +122,12 @@ jQuery(document).ready(function( $ ) {
 
   // Header scroll class
   $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
+    if ($(this).scrollTop() > 50) {
       $('#header').addClass('header-scrolled');
+      $('#mobile-nav-toggle').addClass('nav-scrolled');
     } else {
       $('#header').removeClass('header-scrolled');
+      $('#mobile-nav-toggle').removeClass('nav-scrolled');
     }
   });
 
@@ -127,35 +150,6 @@ jQuery(document).ready(function( $ ) {
     },
     allowPageScroll:"vertical"
   });
-
-
-
-  // Skills section
-  $('#skills').waypoint(function() {
-    $('.progress .progress-bar').each(function() {
-      $(this).css("width", $(this).attr("aria-valuenow") + '%');
-    });
-  }, { offset: '80%'} );
-
-  // Clients carousel (uses the Owl Carousel library)
-  $(".clients-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    responsive: { 0: { items: 2 }, 768: { items: 4 }, 900: { items: 6 }
-    }
-  });
-
-  // Testimonials carousel (uses the Owl Carousel library)
-  $(".ficha-carousel").owlCarousel({
-    autoplay: true,
-    loop: true,
-    items: 1,
-    nav: true,
-    navText : ["<i class='fas fa-angle-left'></i>","<i class='fas fa-angle-right'></i>"]
-  });
-
-
 
 /*GALERIA DE FOTOS*/
   var initPhotoSwipeFromDOM = function(gallerySelector) {
@@ -360,6 +354,6 @@ jQuery(document).ready(function( $ ) {
 // execute above function
 initPhotoSwipeFromDOM('.my-gallery');
 
-  
+
 
 });
