@@ -43,20 +43,50 @@ class DefaultController extends Controller
     }
     
     /**
-     * @Route("/las-habitaciones", name="habitaciones")
-     * @Template("AppBundle:Sitio:habitaciones.html.twig")
+     * @Route("/mauri", name="mauri")
+     * @Template("AppBundle:Sitio:mauri.html.twig")
      */
-    public function habitacionesAction(Request $request)
+    public function mauriAction(Request $request)
     {
     	 
     	return array();
     }
     
     /**
-     * @Route("/los-aparts", name="aparts")
-     * @Template("AppBundle:Sitio:los_aparts.html.twig")
+     * @Route("/lavanda", name="lavanda")
+     * @Template("AppBundle:Sitio:lavanda.html.twig")
      */
-    public function apartsAction(Request $request)
+    public function lavandaAction(Request $request)
+    {
+    	 
+    	return array();
+    }
+    
+    /**
+     * @Route("/juani", name="juani")
+     * @Template("AppBundle:Sitio:juani.html.twig")
+     */
+    public function juaniAction(Request $request)
+    {
+    	 
+    	return array();
+    }
+    
+    /**
+     * @Route("/mora-dulce", name="mora-dulce")
+     * @Template("AppBundle:Sitio:mora_dulce.html.twig")
+     */
+    public function moraDulceAction(Request $request)
+    {
+    	 
+    	return array();
+    }
+    
+    /**
+     * @Route("/pauli", name="pauli")
+     * @Template("AppBundle:Sitio:pauli.html.twig")
+     */
+    public function pauliAction(Request $request)
     {
     	 
     	return array();
