@@ -3,8 +3,8 @@
                         	{% set primera = true %}
                         	{% for gal in galeria.galeria %}
                             <figure class="{% if primera %}mobile-thumb{% endif %} col-sm-3 wow fadeInUp" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                <a href="{{ asset('/uploads/galerias/gallery/') }}{{ gal }}" itemprop="contentUrl" data-size="680x390">
-                                    <img src="{{ asset('/uploads/galerias/') }}{{ gal|gallery_thumb(400,229) }}" itemprop="thumbnail" alt="Image description" />
+                                <a href="{{ asset('/uploads/galerias/gallery/') }}{{ gal }}" itemprop="contentUrl" data-size="1024x685">
+                                    <img src="{{ asset('/uploads/galerias/') }}{{ gal|gallery_thumb(400,268) }}" itemprop="thumbnail" alt="Image description" />
                                     {% if primera %}
                                     <span class="mobile-label">Ver galeria</span>
                                     {% endif %}

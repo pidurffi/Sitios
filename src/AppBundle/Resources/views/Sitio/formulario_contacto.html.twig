@@ -1,0 +1,39 @@
+			<section id="contacto">
+                <div class="container">
+                    <div class="section-header wow fadeInUp">
+                        <h2>Contacto</h2>
+                    </div>
+                    <div class="form">
+                        <div id="sendmessage">Su consulta ha sido enviada. Gracias!</div>
+                        <div id="errormessage"></div>
+                        <form id="form_contacto" role="form" class="contactForm" method="post" onsubmit="return validar_form();">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" data-rule="minlen:4" data-msg="Por favor ingrese al menos 4 caracteres"/>
+                                    <div class="validation"></div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Por favor ingrese un email válido"/>
+                                    <div class="validation"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" id="form_mensaje" rows="5" data-rule="required" data-msg="Por favor escriba un mensaje" placeholder="Mensaje"></textarea>
+                                <div class="validation"></div>
+                            </div>
+                            <div class="text-center">
+                                <button class="send" type="submit">Enviar Mensaje</button>
+                                {#<a href="" class="send">Enviar</a>#}
+        						<div class="spinner" id="form_img_loading">
+            						<div class="rect1"></div>
+            						<div class="rect2"></div>
+            						<div class="rect3"></div>
+            						<div class="rect4"></div>
+            						<div class="rect5"></div>
+            					</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>

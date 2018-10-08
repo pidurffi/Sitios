@@ -1,0 +1,44 @@
+{% extends "AppBundle::Sitio/layout.html.twig" %}
+
+{% set is_interna = true %}
+{% block content %}
+		
+		{% include 'AppBundle:Sitio:intro-internas.html.twig' %}
+		
+        <main id="main">
+
+            <section id="complejo">
+                <div class="container wow fadeInUp">
+                    <header class="section-header">
+                        <h2>Cabaña Mauri</h2>
+                    </header>
+                    <h3>Planta baja</h3>
+                    <p>Living comedor con TV Plasma de 32 pulgadas, toilette y cocina integrada totalmente equipada.</p>
+                    <h3>Planta alta</h3>
+                    <p>Amplio dormitorio principal con grandes ventanales al bosque. Otro dormitorio con dos camas simples que se pueden unir y hacer una doble. Baño completo. Cierre de acceso a escalera para los niños.</p>
+                    <h3>Equipamiento</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Muebles estilo country</li>
+                        <li><i class="fas fa-check-circle"></i> Living comedor con hogar a leña</li>
+                        <li><i class="fas fa-check-circle"></i> Alarma centralizada.</li>
+                        <li><i class="fas fa-check-circle"></i> Wifi</li>
+                        <li><i class="fas fa-check-circle"></i> Cocina convencional con horno</li>
+                        <li><i class="fas fa-check-circle"></i> Microondas</li>
+                        <li><i class="fas fa-check-circle"></i> Parrilla con deck individual</li>
+                        <li><i class="fas fa-check-circle"></i> Estacionamiento cubierto frente a la cabaña</li>
+                        <li><i class="fas fa-check-circle"></i> Black out en ventanas de dormitorios</li>
+                        <li><i class="fas fa-check-circle"></i> TV plasma de 32” con servicio de cable en el living.</li>
+                        <li><i class="fas fa-check-circle"></i> Teléfono con llamadas urbanas libres</li>
+                        <li><i class="fas fa-check-circle"></i> Cocina totalmente equipada</li>
+                        <li><i class="fas fa-check-circle"></i> Heladera con freezer</li>
+                        <li><i class="fas fa-check-circle"></i> Cunita con colchón de 0.90, ropita blanca. Bañerita. Sillita.</li>
+                        <li><i class="fas fa-check-circle"></i> Juego de mesa y sillas</li>
+                    </ul>
+                    {{ render(controller('AppBundle:Default:galeria',{galeria_id: 3})) }}
+                </div>
+            </section>
+
+			{% include 'AppBundle:Sitio:formulario_contacto.html.twig' %}
+
+        </main>
+{% endblock %}        
