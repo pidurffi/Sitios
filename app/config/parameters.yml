@@ -2,25 +2,25 @@
 parameters:
     database_host: 127.0.0.1
     database_port: null
-    database_name: bf_arenas
-    database_user: bf_arenas
+    database_name: bf_merimar
+    database_user: bf_merimar
     database_password: null
     mailer_transport: smtp
-    mailer_host: mail.lascaracolas.com.ar 
-    mailer_user: info@lascaracolas.com.ar 
-    mailer_password: Wzy$v#c=+O0B
+    mailer_host: mail.hotelmerimargesell.com.ar
+    mailer_user: info@hotelmerimargesell.com.ar
+    mailer_password: 7?KZx,xsFxai
     mailer_port: 465
     mailer_encryption: tls
     secret: c8ec181666f4523sdfd53c968f237638e7bdae8b80
     panel.img_usuario: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcpCc0N7KCGr-IUSd-Ng8wRJhhGMDK5_42-WhxST8QoQelGe8u'
-    panel.nombre_sitio: 'Arenas de Mar'
+    panel.nombre_sitio: 'Hotel Merimar'
     panel.login_logo: 'https://www.mardelaspampas.travel/bundles/mdlpsitio/images/header/logo.png'
-    asunto_contacto: Contacto de _nombre_ desde www.lascaracolas.com.ar 
-    contacto_from: info@lascaracolas.com.ar 
+    asunto_contacto: Contacto de _nombre_ desde www.hotelmerimargesell.com.ar
+    contacto_from: info@hotelmerimargesell.com.ar
     contacto_to: gabryel@gmail.com
-    galeria_imagen_ancho: 680
-    galeria_imagen_alto: 390
+    galeria_imagen_ancho: 1024
+    galeria_imagen_alto: 768
     galeria_th1_ancho: 400
-    galeria_th1_alto: 229
-    promocion_imagen_ancho: 200
-    promocion_imagen_alto: 200
+    galeria_th1_alto: 300
+    promocion_imagen_ancho: 400
+    promocion_imagen_alto: 275

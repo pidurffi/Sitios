@@ -76,7 +76,6 @@ $(document).ready(function() {
 	
 	$('.send').click(function(e) { 
 		e.preventDefault();
-		alert("ACA");
 		$('#form_contacto').submit();
 	});
 });

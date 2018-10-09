@@ -1,6 +1,158 @@
 {% extends "AppBundle::Sitio/layout.html.twig" %}
 
 {% block content %}
+
+
+		<section id="intro">
+            <div class="intro-container">
+                <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+                    <ol class="carousel-indicators"></ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <div class="carousel-background">
+                                <img src="{{ asset('bundles/app/maquetado/img/intro-carousel/001.jpg') }}" alt="">
+                            </div>
+                            <div class="carousel-container">
+                                <p><span>Hermosa piscina </span><br>Para disfrutar del sol</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-background">
+                                <img src="{{ asset('bundles/app/maquetado/img/intro-carousel/002.jpg') }}" alt="">
+                            </div>
+                             <div class="carousel-container">
+                                <p><span>Hotel frente al mar </span><br>Con la mejor vista</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-background">
+                                <img src="{{ asset('bundles/app/maquetado/img/intro-carousel/003.jpg') }}" alt="">
+                            </div>
+                             <div class="carousel-container">
+                                <p><span>Habitaciones cómodas </span><br>Y en pleno centro</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">  <span class="carousel-control-prev-icon fas fa-angle-left" aria-hidden="true"></span>  <span class="sr-only">Anterior</span></a>
+                    <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">  <span class="carousel-control-next-icon fas fa-angle-right" aria-hidden="true"></span>  <span class="sr-only">Siguiente</span></a>
+                </div>
+            </div>
+        </section>
+
+        <main id="main">
+        
+        	{{ render(controller('AppBundle:Default:promociones')) }}
+
+            <section id="informacion">
+                <div class="container">
+                    <header class="section-header">
+                        <h2>El placer de estar a metros del mar <br>y con el mejor servicio</h2>
+                    </header>
+                </div>
+            </section>
+
+            <section id="habitaciones">
+                <div class="container wow fadeInUp">
+                    <header class="section-header">
+                        <h2>Las Habitaciones</h2>
+                        <p>El Hotel Merimar cuenta con 34 amplias habitaciones, todas ellas con ventilador de techo, TV por Cable, camas sommier y frigobar.</p>
+                    </header>
+                    <div class="ficha-layout">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="ficha-carousel owl-carousel owl-theme">
+                                	{% for img in galeria_habitaciones.galeria %}
+                                    <div class="item"><img src="{{ asset('/uploads/galerias/gallery/') }}{{ img }}"></div>
+                                	{% endfor %}
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <p class="text-left">Entre las opciones de alojamiento se destaca un cómodo dúplex conformado por dos plantas y tres departamentos ubicados al lado de la piscina.</p>
+                                <p>Además contamos con 15 habitaciones con vista al mar, 1 habitación con balcón terraza al mar, 4 habitaciones con vista lateral al mar y 10 habitaciones con vista a la piscina.</p>
+                                 <ul class="main-list">
+                                    <li><i class="fas fa-check-circle"></i> Cochera cubierta (sujeto a disponibilidad y con cargo)</li>
+                                    <li><i class="fas fa-check-circle"></i> Desayuno continental</li>
+                                    <li><i class="fas fa-check-circle"></i> Wifi en áreas cubiertas</li>
+                                    <li><i class="fas fa-check-circle"></i> Estacionamiento externo gratuito (sujeto a disponibilidad)</li>
+                                    <li><i class="fas fa-check-circle"></i> Piscina</li>
+                                    <li><i class="fas fa-check-circle"></i> Deck frente al mar</li>
+                                    <li><i class="fas fa-check-circle"></i> Solárium con reposeras, mesas y sillas</li>
+                                    <li><i class="fas fa-check-circle"></i> Recepción 24 hs</li>
+                                    <li><i class="fas fa-check-circle"></i> Sala de estar con amplia vista al mar</li>
+                                    <li><i class="fas fa-check-circle"></i> Juegos de mesa</li>
+                                    <li><i class="fas fa-check-circle"></i> Restaurant con deck frente al mar</li>
+                                    <li><i class="fas fa-check-circle"></i> Caja de seguridad en recepción</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="hotel">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>El Hotel</h2>
+                        <p>Hacé click sobre la imágen para ampliarla</p>
+                    </div>
+                    {{ render(controller('AppBundle:Default:galeria',{galeria_id: 1})) }}
+                </div>
+            </section>
+
+            <section id="ubicacion">
+                <div class="container">
+                    <div class="section-header wow fadeInUp">
+                        <h2>Ubicacion</h2>
+                        <p><b>Hotel Merimar</b> se encuentra ubicado en Paseo 107 y Paseo Costanera, Villa Gesell.</p>
+                    </div>
+                </div>
+                <div id="map-container" class="wow fadeInUp"></div>
+            </section>
+
+            <section id="contacto">
+                <div class="container">
+                    <div class="section-header wow fadeInUp">
+                        <h2>Contacto</h2>
+                    </div>
+                    <div class="form">
+                        <div id="sendmessage">Su consulta ha sido enviada. Gracias!</div>
+                        <div id="errormessage"></div>
+                        <form id="form_contacto" role="form" class="contactForm" method="post" onsubmit="return validar_form();">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" data-rule="minlen:4" data-msg="Por favor ingrese al menos 4 caracteres"/>
+                                    <div class="validation"></div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Por favor ingrese un email válido"/>
+                                    <div class="validation"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" id="form_mensaje" rows="5" data-rule="required" data-msg="Por favor escriba un mensaje" placeholder="Mensaje"></textarea>
+                                <div class="validation"></div>
+                            </div>
+                            <div class="text-center">
+                                <button class="send" type="submit">Enviar Mensaje</button>
+                                {#<a href="" class="send">Enviar</a>#}
+        						<div class="spinner" id="form_img_loading">
+            						<div class="rect1"></div>
+            						<div class="rect2"></div>
+            						<div class="rect3"></div>
+            						<div class="rect4"></div>
+            						<div class="rect5"></div>
+            					</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+{% endblock %}
+
+{% block contenta %}
 		<section id="intro">
             <div class="intro-container">
                 <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">

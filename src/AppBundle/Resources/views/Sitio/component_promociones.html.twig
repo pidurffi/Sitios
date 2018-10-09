@@ -1,17 +1,56 @@
+			<section id="promociones">
+                <div class="container">
+                    <div class="row">
+                    	{% set delay = 0 %}
+                    	{% for promocion in promociones %}
+                        <div class="col-md-4 wow fadeInUp" {% if delay > 0 %} data-wow-delay="{{ delay }}s"{% endif %}>
+                            <div class="promocion">
+                                <figure>
+                                	<img src="{{ promocion.webPath }}" alt="">
+                                </figure>
+                                <div class="promocion__content">
+                                	{#
+                                    <span class="fecha">Del 21/05 al 25/05</span>
+                                	#}
+                                    <h2 class="title">{{ promocion.nombre }}</h2>
+                                    <p>{{ promocion.descripcion|nl2br }}</p>
+                                    {#
+                                    <a href="">Ver más <i class="fas fa-long-arrow-alt-right"></i></a>
+                                    #}
+                                </div>
+                            </div>
+                        </div>
+                        {% set delay = delay + 0.1 %}
+                        {% endfor %}
+                        {#
+                        <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="promocion">
+                                <figure>
+                                    <img src="img/promociones/002.jpg" alt="">
+                                </figure>
+                                <div class="promocion__content">
+                                    <span class="fecha">Del 21/05 al 25/05</span>
+                                    <h2 class="title">Feriado Noviembre</h2>
+                                    <p>A muy pocos pasos de la playa y algunas cuadras del centro comercial de Villa Gesell, se encuentran los departamentos <b>Arenas de Mar</b></p>
+                                    <a href="">Ver más <i class="fas fa-long-arrow-alt-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="promocion">
+                                <figure>
+                                    <img src="img/promociones/003.jpg" alt="">
+                                </figure>
+                                <div class="promocion__content">
+                                    <span class="fecha">Del 21/05 al 25/05</span>
+                                    <h2 class="title">Diciembre en Merimar</h2>
+                                    <p>Villa Gesell no solo cuenta con las playas mas lindas de la costa atlántica. Arenas finas, medanos, bosque, historia, aventura, diversión...</p>
+                                    <a href="">Ver más <i class="fas fa-long-arrow-alt-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        #}
+                    </div>
+                </div>
+            </section>
 
-
-	<section class="info">
-		<div class="container">
-			<div class="row">
-			{% for promocion in promociones %}
-				<div class="col-sm-4">
-					<div class="info-item">
-						<img src="{{ promocion.webPath|thumb(355,200) }}" alt="">
-						<h3>{{ promocion.nombre }}</h3>
-						<p>{{ promocion.descripcion|nl2br }}</p>
-					</div>
-				</div>
-			{% endfor %}
-			</div>
-		</div>
-	</section>

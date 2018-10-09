@@ -17,7 +17,8 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-    	return array();
+    	$galeria_habitaciones = $this->getDoctrine()->getRepository('AppBundle:Galeria')->find(2);
+    	return array('galeria_habitaciones'=>$galeria_habitaciones);
     }
     
     /**

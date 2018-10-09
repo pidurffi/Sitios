@@ -2,18 +2,18 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Arenas de Mar - Apartamentos - Villa Gesell</title>
+        <title>Hotel Merimar</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta name="keywords" content="alquiler, apart, departamentos, las gaviotas, mar de las pampas, playa, vacaciones" />
-        <meta name="description" content="Aparts con servicios, piscina, solarium, amplio parque, mucama, ropa blanca, WI-FI. A 400m del mar" />
+        <meta name="keywords" content="alquiler, hotel, habitaciones, villa gesell, playa, vacaciones" />
+        <meta name="description" content="El Hotel Merimar cuenta con 34 amplias habitaciones, todas ellas con ventilador de techo, TV por Cable, camas sommier y frigobar."/>
         <meta name="author" content="www.lasgaviotas.travel" />
 
-        <meta property="og:title" content="Arawi Apart - Las Gaviotas" />
-        <meta property="og:description" content="Aparts con servicios, piscina, solarium, amplio parque, mucama, ropa blanca, WI-FI. A 400m del mar/>
+        <meta property="og:title" content="Hotel Merimar" />
+        <meta property="og:description" content="El Hotel Merimar cuenta con 34 amplias habitaciones, todas ellas con ventilador de techo, TV por Cable, camas sommier y frigobar."/>
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://www.arenasdemar.com.ar" >
-        <meta property="og:image" content="http://www.arenasdemar.com.ar/comob_r1_c1.jpg" />
-        <meta property="og:site_name" content="www.arenasdemar.com.ar" />
+        <meta property="og:url" content="http://www.hotelmerimar.com.ar" >
+        <meta property="og:image" content="http://www.hotelmerimar.com.ar/comob_r1_c1.jpg" />
+        <meta property="og:site_name" content="www.hotelmerimar.com.ar" />
         <meta name="google-site-verification" content="QjTDQYagcRwB5iiHEeTMRpo8LwPGQQFG7nmj0Kep4dM" />
 
 
@@ -29,7 +29,7 @@
         <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('bundles/app/maquetado/img/apple-touch-icon-152x152.png') }}" />
         <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('bundles/app/maquetado/img/apple-touch-icon-180x180.png') }}" />
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Lora:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Yellowtail" rel="stylesheet">
         <!-- Bootstrap CSS File -->
         <link href="{{ asset('bundles/app/maquetado/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
         <!-- Libraries CSS Files-->
@@ -48,58 +48,47 @@
         <header id="header">
             <div class="container sticky-top">
                 <div id="logo">
-                     <h1><img src="{{ asset('bundles/app/maquetado/img/logo.jpg') }}" alt="Arenas de Mar - Apartamentos - Villa Gesell" title="" /></h1>
+                     <h1><img src="{{ asset('bundles/app/maquetado/img/logo.png') }}" alt="Hotel Merimar" title="" /></h1>
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
-                        <li class="menu-active">
-                            <a href="#intro">Inicio</a>
-                        </li>
-                        <li>
-                            <a href="#apartamentos">Los Apartamentos</a>
-                        </li>
-                        <li>
-                            <a href="#informacion">Villa Gesell</a>
-                        </li>
-                        <li>
-                            <a href="#galeria">Galeria</a>
-                        </li>
-                        <li>
-                            <a href="#ubicacion">Ubicacion</a>
-                        </li>
-                        <li>
-                            <a href="#contacto">Contacto</a>
-                        </li>
+                        <li class="menu-active"><a href="#intro">Inicio</a></li>
+                        <li><a href="#habitaciones">Habitaciones</a></li>
+                        <li><a href="#hotel">El Hotel</a></li>
+                        <li><a href="#ubicacion">Ubicación</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-
+        
         {% block content %}{% endblock %}
+
+        
 
         <footer>
             <div class="container">
-                <ul class="footer-nav">
-                    <li class="menu-active">
-                        <a href="#intro">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="#apartamentos">Los Apartamentos</a>
-                    </li>
-                    <li>
-                        <a href="#informacion">Villa Gesell</a>
-                    </li>
-                    <li>
-                        <a href="#galeria">Galeria</a>
-                    </li>
-                    <li>
-                        <a href="#ubicacion">Ubicacion</a>
-                    </li>
-                    <li>
-                        <a href="#contacto">Contacto</a>
-                    </li>
-                </ul>
-                <p>© 2013-2018 Arenas de Mar, Todos los derechos reservados.</p>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img class="logo-footer" src="{{ asset('bundles/app/maquetado/img/logo.png') }}" alt="Hotel Merimar" title="" />
+                    </div>
+                    <div class="col-sm-4">
+                        <h3>Contacto</h3>
+                        <p><span>Dirección:</span> Paseo 107 y Paseo Costanera,<br>Villa Gesell,<br>Buenos Aires</p>
+                        <p><span>Teléfono:</span> (02254) 46.2243 / 2539</p>
+                        <p><span>Mail:</span> <a href="mailto:consulta@hotelmerimar.com.ar">consulta@hotelmerimar.com.ar</a></p>
+                    </div>
+                    <div class="col-sm-4">
+                        <h3>Menú</h3>
+                        <ul class="footer-nav">
+                            <li><a href="#intro">Inicio</a></li>
+                            <li><a href="#habitaciones">Habitaciones</a></li>
+                            <li><a href="#hotel">Hotel</a></li>
+                            <li><a href="#ubicacion">Ubicación</a></li>
+                            <li><a href="#contacto">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </footer>
 
@@ -160,7 +149,7 @@
         <script type="text/javascript">
             //GOOGLE MAP
             function regular_map() {
-            var var_location = new google.maps.LatLng(-37.333774, -57.027959);
+            var var_location = new google.maps.LatLng(-37.1062643, -56.8601469);
 
             var var_mapoptions = {
             center: var_location,
@@ -175,7 +164,7 @@
             var var_marker = new google.maps.Marker({
             position: var_location,
             map: var_map,
-            title: "ARENAS DE MAR - Villa Gesell"
+            title: "Hotel Merimar - Villa Gesell"
             });
             }
 

@@ -32,7 +32,7 @@ CREATE TABLE `fos_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `fos_user` (`id`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `confirmation_token`, `password_requested_at`, `roles`, `nombre`, `apellido`, `contacto`, `establecimiento_activo_id`, `created`, `updated`) VALUES
-(1, 'admin', 'admin', 'admin@mardelaspampas.travel', 'admin@mardelaspampas.travel', 1, NULL, '$2y$13$/Lzvp4AtnpIIFKX/.NZGfeECQRspLOmpZBIcM.XV2l4SBT8TPIXAK', '2018-09-26 03:53:37', NULL, NULL, 'a:1:{i:0;s:16:\"ROLE_SUPER_ADMIN\";}', 'Admin', '', '-', 16, '2017-10-12 12:16:55', '2017-10-12 12:16:55');
+(1, 'admin', 'admin', 'admin@mardelaspampas.travel', 'admin@mardelaspampas.travel', 1, NULL, '$2y$13$vi9jSSiM5xX9OlgXUcacYusQvph65eewVnEse0pW03C5hda7xXjVe', '2018-10-09 00:35:02', NULL, NULL, 'a:1:{i:0;s:16:\"ROLE_SUPER_ADMIN\";}', 'Admin', '', '-', 16, '2017-10-12 12:16:55', '2017-10-12 12:16:55');
 
 CREATE TABLE `galeria` (
   `id` int(11) NOT NULL,
@@ -41,7 +41,8 @@ CREATE TABLE `galeria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `galeria` (`id`, `nombre`, `galeria`) VALUES
-(1, 'Galería Principal', 'a:12:{i:0;s:52:\"cropped/ef57a25958f2b8403d7828920fb9c2444aeb59ee.jpg\";i:1;s:52:\"cropped/02d7e2629b66cc1ba3f38763ec766752a031cb2a.jpg\";i:2;s:52:\"cropped/174550fdfd15204713ea20e7166febd55266bd68.jpg\";i:3;s:52:\"cropped/f1bdd8524768d15a15fcfbac70792dfdb3ef2c25.jpg\";i:4;s:52:\"cropped/4d49c0d3ecb73bb404295a784157f4d7f465ec21.jpg\";i:5;s:52:\"cropped/0ec931d476cdcb4bf876cb2a3f96547c08f14302.jpg\";i:6;s:52:\"cropped/b970deb2ad44170b517cb4b75ece567cad00bef0.jpg\";i:7;s:52:\"cropped/9351c1b79849c63d0b3b09266cef1043f869a35a.jpg\";i:8;s:52:\"cropped/11ed7481598e66001f2fe056b02d7b80899276c6.jpg\";i:9;s:52:\"cropped/e68340c607dfc11fd6a6be26051bde134b1a916d.jpg\";i:10;s:52:\"cropped/07b9afc7c11b1d2e7b794c1072f5b4725b6cd35e.jpg\";i:11;s:52:\"cropped/87f4006cd027587412320f43016b9be2d4fb80a4.jpg\";}');
+(1, 'El hotel', 'a:6:{i:0;s:52:\"cropped/57dcd626f8fd95bc459c72c0c74b682a5db781c5.jpg\";i:1;s:52:\"cropped/6eaa6782ac7970f344760a8febdb08a0ae8d1bc1.jpg\";i:2;s:52:\"cropped/83cdac3ad92fe16e064010cd2c16f6a6a7f608da.jpg\";i:3;s:52:\"cropped/6eae516c22ec144fb22d60dac3b2bd679f32f14c.jpg\";i:4;s:52:\"cropped/a3e1f2a4a59148a289e00d0bbed93a8490e4a11e.jpg\";i:5;s:52:\"cropped/e7861464d82e6599808dc9d6f41492c222b54d0b.jpg\";}'),
+(2, 'Las habitaciones', 'a:3:{i:0;s:52:\"cropped/2aa3aa29ec54b467bda648d7097e613e100ed0f3.jpg\";i:1;s:52:\"cropped/9733c1f19b0b0ba9557588397de674927f4dbea0.jpg\";i:2;s:52:\"cropped/67523cf648c815ebf25ceb88e29cc00ff3b301c0.jpg\";}');
 
 CREATE TABLE `promocion` (
   `id` int(11) NOT NULL,
@@ -56,7 +57,9 @@ CREATE TABLE `promocion` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `promocion` (`id`, `nombre`, `fecha_publicacion`, `fecha_vencimiento`, `generica`, `descripcion`, `mensaje`, `imagen`, `orden`) VALUES
-(1, 'El nombre', '2011-01-06', '2018-01-11', 1, 'Lineas', NULL, 'cropped/ec862302a2576a5c1637b17fd4c95e9c716a1a90.jpg', 2);
+(1, 'Feriado Octubre', '2011-01-06', '2018-01-11', 1, 'En una ubicación privilegiada a metros del mar, Arenas de Mar cuanta con un total de 12 confortables departamentos', NULL, 'cropped/de1a3c7d6ea7e069897667475929e22a3ec10605.jpg', 1),
+(2, 'Feriado Noviembre', '2018-10-01', '2022-03-30', 1, 'A muy pocos pasos de la playa y algunas cuadras del centro comercial de Villa Gesell, se encuentran los departamentos Arenas de Mar', NULL, 'cropped/9a18e0e83200cd667c646abf266ad6190e04a12b.jpg', 2),
+(3, 'Diciembre en Merimar', '2018-10-01', '2022-10-31', 1, 'Villa Gesell no solo cuenta con las playas mas lindas de la costa atlántica. Arenas finas, medanos, bosque, historia, aventura, diversión...', NULL, 'cropped/790a2762d54cb433f659b8ae9b312558fd01ebea.jpg', 3);
 
 
 ALTER TABLE `contacto`
@@ -83,4 +86,4 @@ ALTER TABLE `fos_user`
 ALTER TABLE `galeria`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 ALTER TABLE `promocion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
