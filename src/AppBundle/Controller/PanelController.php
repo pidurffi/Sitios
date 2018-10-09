@@ -92,20 +92,20 @@ class PanelController extends PanelBaseController
         return array('form'=>$form->createView());
     }
     
-    public function servicioDeleteAction(Request $request,$id) {
+    public function promocionDeleteAction(Request $request,$id) {
         if(empty($id)){
             $this->addErrorFlash('Acceso incorrecto. Se ha enviado una notificación al administrador');
             return new RedirectResponse($this->generateUrl('homepage'));
         } else {
-            $servicio = $this->getDoctrine()->getRepository('AppBundle:Servicio')->find($id);
-            if(!$servicio) {
+        	$promocion = $this->getDoctrine()->getRepository('AppBundle:Promocion')->find($id);
+            if(!$promocion) {
                 $this->addErrorFlash('Acceso incorrecto. Se ha enviado una notificación al administrador');
                 return new RedirectResponse($this->generateUrl('homepage'));
             }
-            $this->getDoctrine()->getManager()->remove($servicio);
+            $this->getDoctrine()->getManager()->remove($promocion);
             $this->getDoctrine()->getManager()->flush();
-            $this->addSuccessFlash('El servicio ha sido eliminado correctamente');
-            return new RedirectResponse($this->generateUrl('panel_servicios'));
+            $this->addSuccessFlash('La promocion ha sido eliminada correctamente');
+            return new RedirectResponse($this->generateUrl('panel_promociones'));
         }
     }
     
