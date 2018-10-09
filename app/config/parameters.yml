@@ -4,7 +4,7 @@ parameters:
     database_port: null
     database_name: elsolard_db
     database_user: elsolard_user
-    database_password: tAUsEaIJt86fy8W8m
+    database_password: Nu2RfEkJwd9DGhiZ
     mailer_transport: smtp
     mailer_host: mail.lascaracolas.com.ar 
     mailer_user: info@lascaracolas.com.ar 

@@ -48,36 +48,7 @@
 
         <main id="main">
 
-            <section id="promociones">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="promocion">
-                                <i class="material-icons">pool</i>
-                                <h2 class="title">Piscina climatizada</h2>
-                                <span class="fecha">Del 21/05 al 25/05</span>
-                                <p>Ubicada en un marco ideal rodeada de un médano con pinos se encuentra la piscina descubierta climatizada por paneles solares y un gran solarium que se habilita desde Octubre a Marzo.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
-                            <div class="promocion">
-                                <i class="material-icons">hotel</i>
-                                <h2 class="title">Cabañas independientes</h2>
-                                <span class="fecha">Del 21/05 al 25/05</span>
-                                <p>Amplias cabañas de 90 a 120 m2 que cuentan con atención personalizada.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 wow fadeInUp">
-                            <div class="promocion">
-                                <i class="material-icons">beach_access</i>
-                                <h2 class="title">Amplio parque</h2>
-                                <span class="fecha">Del 21/05 al 25/05</span>
-                                <p>Cabañas construidas en lotes individuales, rodeadas de amplio parque por delante y con un gran médano con pinos y acacias por atrás donde la naturaleza nos acompaña para un verdadero descanso.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {{ render(controller('AppBundle:Default:promociones')) }}
 
             <section id="informacion">
                 <div class="container">
