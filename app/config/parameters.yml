@@ -2,9 +2,9 @@
 parameters:
     database_host: 127.0.0.1
     database_port: null
-    database_name: bf_elsolar
-    database_user: bf_elsolar
-    database_password: null
+    database_name: elsolard_db
+    database_user: elsolard_user
+    database_password: yubNfevpeO1jdz2N
     mailer_transport: smtp
     mailer_host: mail.lascaracolas.com.ar 
     mailer_user: info@lascaracolas.com.ar 
