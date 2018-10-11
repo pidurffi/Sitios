@@ -79,7 +79,7 @@
                     </div>
                     <div class="col-sm-4">
                         <ul class="footer-nav">
-                        	<li><a {% if app.request.attributes.get('_route') == 'homepage' %} data-scroll href="#intro"{% else %}href="{{ path('homepage') }}#intro"{% endif %}>Inicio</a></li>
+                            <li><a {% if app.request.attributes.get('_route') == 'homepage' %} data-scroll href="#intro"{% else %}href="{{ path('homepage') }}#intro"{% endif %}>Inicio</a></li>
                             <li><a {% if app.request.attributes.get('_route') == 'homepage' %} data-scroll href="#complejo"{% else %}href="{{ path('homepage') }}#complejo"{% endif %}>El Complejo</a></li>
                             <li><a {% if app.request.attributes.get('_route') == 'homepage' %} data-scroll href="#cabanas"{% else %}href="{{ path('homepage') }}#cabanas"{% endif %}>Las Cabañas</a></li>
                             <li><a {% if app.request.attributes.get('_route') == 'homepage' %} data-scroll href="#ubicacion"{% else %}href="{{ path('homepage') }}#ubicacion"{% endif %}>Ubicación</a></li>

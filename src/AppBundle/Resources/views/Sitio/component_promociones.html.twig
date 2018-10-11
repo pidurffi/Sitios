@@ -1,17 +1,23 @@
+			<section id="promociones">
+                <div class="container">
+                    <div class="row">
+                    	{% set delay = 0 %}
+                    	{% for promocion in promociones %}
+                    		{% set delay = delay + 0.1 %}
+                        <div class="col-lg-4 wow fadeInUp" {% if delay < 0.3 %} data-wow-delay="{{ delay }}s"{% endif %}>
+                            <div class="promocion">
+                                <figure>
+                                    <img src="{{ promocion.webPath }}" alt="">
+                                </figure>
+                                <div class="promocion-content">
+                                    <h2 class="title">{{ promocion.nombre }}</h2>
+                                    <p>{{ promocion.descripcion|nl2br }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
 
 
-	<section class="info">
-		<div class="container">
-			<div class="row">
-			{% for promocion in promociones %}
-				<div class="col-sm-4">
-					<div class="info-item">
-						<img src="{{ promocion.webPath|thumb(355,200) }}" alt="">
-						<h3>{{ promocion.nombre }}</h3>
-						<p>{{ promocion.descripcion|nl2br }}</p>
-					</div>
-				</div>
-			{% endfor %}
-			</div>
-		</div>
-	</section>

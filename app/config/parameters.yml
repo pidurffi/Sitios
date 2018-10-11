@@ -2,9 +2,9 @@
 parameters:
     database_host: 127.0.0.1
     database_port: null
-    database_name: elsolard_db
-    database_user: elsolard_user
-    database_password: Nu2RfEkJwd9DGhiZ
+    database_name: bf_elsolar
+    database_user: bf_elsolar
+    database_password: null
     mailer_transport: smtp
     mailer_host: mail.lascaracolas.com.ar 
     mailer_user: info@lascaracolas.com.ar 
@@ -22,5 +22,5 @@ parameters:
     galeria_imagen_alto: 685
     galeria_th1_ancho: 400
     galeria_th1_alto: 268
-    promocion_imagen_ancho: 200
-    promocion_imagen_alto: 200
+    promocion_imagen_ancho: 280
+    promocion_imagen_alto: 150
