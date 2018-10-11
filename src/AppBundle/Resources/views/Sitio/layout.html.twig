@@ -73,9 +73,9 @@
                         <img class="logo-footer" src="{{ asset('bundles/app/maquetado/img/logo.png') }}" alt="El Solar del Bosque" title="" />
                     </div>
                     <div class="col-sm-4">
-                        <p><i class="material-icons">near_me</i> Paseo 107 y Paseo Costanera,<br>Mar de las Pampas,<br>Buenos Aires</p>
-                        <p><i class="material-icons">call</i> (02254) 46.2243 / 2539</p>
-                        <p><i class="material-icons">email</i> <a href="mailto:consultas@elsolardelbosque.com.ar">consultas@elsolardelbosque.com.ar</a></p>
+                        <p><i class="material-icons">near_me</i> Los Cóndores 485,<br>Mar de las Pampas,<br>Buenos Aires</p>
+                        <p><i class="material-icons">call</i> 02255.459819 <br/> Whatsapp: 11.45502711</p>
+                        <p><i class="material-icons">email</i> <a href="mailto:info@elsolardelbosque.com.ar">info@elsolardelbosque.com.ar</a></p>
                     </div>
                     <div class="col-sm-4">
                         <ul class="footer-nav">
@@ -147,7 +147,7 @@
         <script type="text/javascript">
             //GOOGLE MAP
             function regular_map() {
-            var var_location = new google.maps.LatLng(-37.1062643, -56.8601469);
+            var var_location = new google.maps.LatLng(-37.318653, -57.020205);
 
             var var_mapoptions = {
             center: var_location,
@@ -162,6 +162,7 @@
             var var_marker = new google.maps.Marker({
             position: var_location,
             map: var_map,
+            animation: google.maps.Animation.BOUNCE,
             title: "El Solar del Bosque - Mar de las Pampas"
             });
             }

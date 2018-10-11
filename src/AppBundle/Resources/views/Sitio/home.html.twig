@@ -48,45 +48,7 @@
 
         <main id="main">
 
-            <section id="promociones">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="promocion">
-                                <figure>
-                                    <img src="http://elsolardelbosque.com.ar/uploads/promociones/bfcdba1c8a8f0a343ad99b681864bd7a823b48e2.jpg" alt="">
-                                </figure>
-                                <div class="promocion-content">
-                                    <h2 class="title">Piscina climatizada</h2>
-                                    <p>Ubicada en un marco ideal rodeada de un médano con pinos se encuentra la piscina descubierta climatizada por paneles solares y un gran solarium que se habilita desde Octubre a Marzo.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
-                            <div class="promocion">
-                                <figure>
-                                    <img src="http://elsolardelbosque.com.ar/uploads/promociones/5fcaddd0bfddb86a8ffa58e71572e6abbceee8dd30.jpg" alt="">
-                                </figure>
-                                <div class="promocion-content">
-                                    <h2 class="title">Cabañas independientes</h2>
-                                    <p>Amplias cabañas de 90 a 120 m2 que cuentan con atención personalizada.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 wow fadeInUp">
-                            <div class="promocion">
-                                <figure>
-                                    <img src="http://elsolardelbosque.com.ar/uploads/promociones/promo3.jpg" alt="">
-                                </figure>
-                                <div class="promocion-content">
-                                    <h2 class="title">Amplio parque</h2>
-                                    <p>Cabañas construidas en lotes individuales, rodeadas de amplio parque por delante y con un gran médano con pinos y acacias por atrás donde la naturaleza nos acompaña para un verdadero descanso.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {{ render(controller('AppBundle:Default:promociones')) }}            
 
             <section id="informacion">
                 <div class="container">
@@ -106,32 +68,31 @@
                     </header>
                     <h3>Servicios</h3>
                     <ul>
+                        <li><i class="fas fa-check-circle"></i> Desayunos servidos en la cabaña a partir de las 8.30 hs. que consta de:  Medialunas, tostadas para untar con queso untable, mermelada y dulce de leche. Infusiones (café, café con leche, té, mate cocido) y chocolatada</li>
                         <li><i class="fas fa-check-circle"></i> Piscina descubierta climatizada por paneles solares – abierta desde Octubre a Marzo</li>
                         <li><i class="fas fa-check-circle"></i> Solarium</li>
                         <li><i class="fas fa-check-circle"></i> Gran parque</li>
-                        <li><i class="fas fa-check-circle"></i> Wi Fi en la cabaña</li>
+                        <li><i class="fas fa-check-circle"></i> Wi Fi en la cabaña y en todo el Complejo</li>
                         <li><i class="fas fa-check-circle"></i> Mucama</li>
                         <li><i class="fas fa-check-circle"></i> Ropa blanca (sábanas, toallas y toallones para uso exclusivo en la cabaña)</li>
-                        <li><i class="fas fa-check-circle"></i> Estacionamientos cubiertos frente a la cabaña</li>
+                        <li><i class="fas fa-check-circle"></i> Estacionamiento cubierto con media sombra frente a la cabaña</li>
                         <li><i class="fas fa-check-circle"></i> Atención personalizada</li>
+                        <li><i class="fas fa-check-circle"></i> No se admiten cuatriciclos</li>
                     </ul>
                     <h3>Equipamiento</h3>
                     <ul>
                         <li><i class="fas fa-check-circle"></i> Cocina convencional con horno</li>
                         <li><i class="fas fa-check-circle"></i> Vajilla completa</li>
-                        <li><i class="fas fa-check-circle"></i> Teléfono para llamadas urbanas</li>
-                        <li><i class="fas fa-check-circle"></i> Cofre de seguridad</li>
                         <li><i class="fas fa-check-circle"></i> Hogar a leña</li>
                         <li><i class="fas fa-check-circle"></i> Ventiladores de techo y/o de pie</li>
                         <li><i class="fas fa-check-circle"></i> Cunas, bañaderitas y sillitas de comer para bebés</li>
-                        <li><i class="fas fa-check-circle"></i> Deck con juego de mesa y sillas</li>
+                        <li><i class="fas fa-check-circle"></i> Deck con parrilla individual, con juego de mesa y sillas</li>
                         <li><i class="fas fa-check-circle"></i> Heladera con freezer</li>
                         <li><i class="fas fa-check-circle"></i> Microondas</li>
                         <li><i class="fas fa-check-circle"></i> TV con servicio de cable</li>
                         <li><i class="fas fa-check-circle"></i> Calefacción por tiro balanceado y/o estufas eléctricas</li>
-                        <li><i class="fas fa-check-circle"></i> Alarma monitoreada</li>
+                        <li><i class="fas fa-check-circle"></i> Alarma individual</li>
                         <li><i class="fas fa-check-circle"></i> Black out en dormitorios</li>
-                        <li><i class="fas fa-check-circle"></i> Parrilla individual</li>
                     </ul>
                     {{ render(controller('AppBundle:Default:galeria',{galeria_id: 1})) }}
                 </div>
