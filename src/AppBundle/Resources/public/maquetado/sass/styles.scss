@@ -180,9 +180,8 @@ body {
 				display: inline-block;
 				margin-top: 40px;
 				padding: 10px 30px;
-				font-size: 20px;
+				font-size: 16px;
 				font-weight: 300;
-				text-transform: uppercase;
 				color: $white;
 				border: 2px solid $white;
 				background-color: transparent;
@@ -487,11 +486,14 @@ section {
     }
     header {
     	h2 {
+    		font-size: 50px;
     		color: $white;
     		@include text-shadow(2px 2px 10px rgba(00,00,00,0.5));
     	}
     }
     p {
+    	font-size: 24px;
+    	font-weight: 300;
     	color: $white;
     }
     @media (min-width: 768px) {
@@ -980,3 +982,9 @@ footer {
   border: 2px solid #ff3300 !important;
 }
 
+.send-button {
+	button {
+		display: block;
+		margin: 0 auto;
+	}
+}
