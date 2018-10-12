@@ -6,8 +6,8 @@ parameters:
     database_user: elsolard_user
     database_password: yubNfevpeO1jdz2N
     mailer_transport: smtp
-    mailer_host: mail.lascaracolas.com.ar 
-    mailer_user: info@lascaracolas.com.ar 
+    mailer_host: mail.elsolardelbosque.com.ar 
+    mailer_user: info@elsolardelbosque.com.ar 
     mailer_password: Wzy$v#c=+O0B
     mailer_port: 465
     mailer_encryption: tls
@@ -16,7 +16,7 @@ parameters:
     panel.nombre_sitio: 'El Solar del Bosque'
     panel.login_logo: 'https://www.mardelaspampas.travel/bundles/mdlpsitio/images/header/logo.png'
     asunto_contacto: Contacto de _nombre_ desde www.elsolardelbosque.com.ar 
-    contacto_from: info@lascaracolas.com.ar 
+    contacto_from: info@elsolardelbosque.com.ar 
     contacto_to: gabryel@gmail.com
     galeria_imagen_ancho: 1024
     galeria_imagen_alto: 685
