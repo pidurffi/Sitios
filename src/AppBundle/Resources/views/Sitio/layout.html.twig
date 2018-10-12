@@ -40,6 +40,7 @@
         <link href="{{ asset('bundles/app/maquetado/lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
         <link href="{{ asset('bundles/app/maquetado/css/photoswipe.css')}}" rel="stylesheet">
         <link href="{{ asset('bundles/app/maquetado/css/default-skin.css')}}" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
         <!-- Main Stylesheet File -->
         <link href="{{ asset('bundles/app/maquetado/css/styles.css')}}" rel="stylesheet">
 
@@ -142,8 +143,29 @@
         <script src="{{ asset('bundles/app/maquetado/lib/photoswipe/photoswipe-ui.js')}}"></script>
         <script src="{{ asset('bundles/app/maquetado/contactform/contactform.js')}}"></script>
         <script src="{{ asset('bundles/app/maquetado/js/main.js')}}"></script>
+        <script src="{{ asset('bundles/app/maquetado/js/moment.js') }}"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
         <script src="{{ asset('bundles/app/js/contacto.js') }}"></script>
         <script src="https://maps.google.com/maps/api/js?key=AIzaSyA2sb3o4NFhhiXg1tWTQZJnCOqKlwuLD4U"></script>
+        <script type="text/javascript">
+            $(function () {
+            	$('#datetimepicker1').datetimepicker({
+            		locale: 'es',
+            		format: 'DD/MM/YYYY'
+                });
+            	$('#datetimepicker2').datetimepicker({
+            		locale: 'es',
+            		format: 'DD/MM/YYYY',
+            		useCurrent: false //Important! See issue #1075
+                });
+            	$("#datetimepicker1").on("change.datetimepicker", function (e) {
+                    $('#datetimepicker2').datetimepicker('minDate',(e.date));
+                });
+                $("#datetimepicker2").on("change.datetimepicker", function (e) {
+                    $('#datetimepicker1').datetimepicker('maxDate',(e.date));
+                });
+            });
+        </script>
         <script type="text/javascript">
             //GOOGLE MAP
             function regular_map() {

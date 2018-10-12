@@ -97,17 +97,39 @@ class DefaultController extends Controller
      */
     public function contactoAjaxAction(Request $request) {
     	$rta = array('ok'=>0,'error'=>0);
-    	$nombre = $request->request->get('nombre','');
-    	$email = $request->request->get('email','');
-    	//$telefono = $request->request->get('telefono','');
-    	$mensaje = $request->request->get('mensaje','');
+    	//$fuente_datos = $request->query;
+    	$fuente_datos = $request->request;
+    	
+    	$nombre = $fuente_datos->get('nombre','');
+    	$telefono = $fuente_datos->get('telefono','');
+    	$email = $fuente_datos->get('email','');
+    	$mensaje = $fuente_datos->get('mensaje','');
+    	$fecha_ingreso = $fuente_datos->get('fecha_ingreso','');
+    	$fecha_salida = $fuente_datos->get('fecha_salida','');
+    	$cantidad_adultos = $fuente_datos->get('cantidad_adultos','');
+    	$cantidad_ninos = $fuente_datos->get('cantidad_ninos','');
+    	try {
+    		$fiDate = \DateTime::createFromFormat('d/m/Y',$fecha_ingreso);
+    	} catch(\Excepcion $ex) {
+    	}
+    	try {
+    		$fsDate = \DateTime::createFromFormat('d/m/Y',$fecha_salida);
+    	} catch(\Excepcion $ex) {
+    	}
+    	if(!$fiDate) $fiDate = NULL;
+    	if(!$fsDate) $fsDate = NULL;
+    	
     
     	$contacto = new Contacto();
     	$contacto->setNombre($nombre);
     	$contacto->setEmail($email);
-    	//$contacto->setTelefono($telefono);
+    	$contacto->setTelefono($telefono);
     	$contacto->setMensaje($mensaje);
     	$contacto->setFecha(new \DateTime());
+    	$contacto->setFechaIngreso($fiDate);
+    	$contacto->setFechaSalida($fsDate);
+    	$contacto->setCantidadAdultos($cantidad_adultos);
+    	$contacto->setCantidadNinos($cantidad_ninos);
     	$this->getDoctrine()->getManager()->persist($contacto);
     	$this->getDoctrine()->getManager()->flush();
     
@@ -119,9 +141,13 @@ class DefaultController extends Controller
     		$body = $this->renderView('AppBundle:Sitio:email_contacto.html.twig',
     				array(
     						'nombre' => $nombre,
-    						//'telefono' => $telefono,
+    						'telefono' => $telefono,
     						'email' => $email,
     						'mensaje' => $mensaje,
+    						'fecha_ingreso' => $fiDate,
+    						'fecha_salida' => $fsDate,
+    						'cantidad_adultos' => $cantidad_adultos,
+    						'cantidad_ninos' => $cantidad_ninos
     				));
 
     		$email_reply_to = $email;

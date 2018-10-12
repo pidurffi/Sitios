@@ -15,12 +15,12 @@ function validar_form() {
 	var errores = false;
 	var nombre = $('#name').val().trim();
 	var email = $('#email').val().trim();
-//	var telefono = $('#form_telefono').val().trim();
+	var telefono = $('#telefono').val().trim();
 	var mensaje = $('#form_mensaje').val().trim();
-/*	var fecha_ingreso = $('#input-fecha-ingreso').val().trim();
+	var fecha_ingreso = $('#input-fecha-ingreso').val().trim();
 	var fecha_salida = $('#input-fecha-salida').val().trim();
 	var cantidad_adultos = $('#cantidad_adultos').val().trim();
-	var cantidad_ninos = $('#cantidad_ninos').val().trim();*/
+	var cantidad_ninos = $('#cantidad_ninos').val().trim();
 	
 	if(nombre == "") {
 		$('#name').addClass('error');
@@ -28,12 +28,12 @@ function validar_form() {
 	} else {
 		$('#name').removeClass('error');
 	}
-	/*if(telefono == "") {
+	if(telefono == "") {
 		$('#form_telefono').addClass('error');
 		errores = true;
 	} else {
 		$('#form_telefono').removeClass('error');
-	}*/
+	}
 	if((email == "")||(!validateEmail(email))) {
 		$('#email').addClass('error');
 		errores = true;
@@ -51,8 +51,8 @@ function validar_form() {
 		enviando =true;
 		$('#form_img_loading').addClass('on');
 		$('.send').addClass('off');
-		$.post('/contacto-ajax',{nombre: nombre, email: email, /*telefono: telefono,*/ mensaje: mensaje/*,
-			fecha_ingreso: fecha_ingreso, fecha_salida: fecha_salida, cantidad_adultos: cantidad_adultos, cantidad_ninos: cantidad_ninos*/
+		$.post('/contacto-ajax',{nombre: nombre, email: email, telefono: telefono, mensaje: mensaje,
+			fecha_ingreso: fecha_ingreso, fecha_salida: fecha_salida, cantidad_adultos: cantidad_adultos, cantidad_ninos: cantidad_ninos
 			}
 		,function(data) {
 			enviando = false;
