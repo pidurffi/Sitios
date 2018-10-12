@@ -983,8 +983,25 @@ footer {
 }
 
 .send-button {
+	position: relative;
 	button {
 		display: block;
 		margin: 0 auto;
+	}
+	.spinner {
+		position: absolute;
+		top: 4px;
+		left: 50%;
+		margin-left: -25px;
+	}
+}
+
+.faqs {
+	color: $section-bg;
+	border-bottom: 1px solid transparent;
+	@include transition(border-color .25s ease);
+	&:hover {
+		color: $section-bg;
+		border-bottom-color: $section-bg; 
 	}
 }

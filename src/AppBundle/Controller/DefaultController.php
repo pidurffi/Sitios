@@ -81,6 +81,16 @@ class DefaultController extends Controller
     	 
     	return array();
     }
+
+    /**
+     * @Route("/faqs", name="faqs")
+     * @Template("AppBundle:Sitio:faqs.html.twig")
+     */
+    public function faqsDulceAction(Request $request)
+    {
+         
+        return array();
+    }
     
     /**
      * @Route("/pauli", name="pauli")

@@ -1151,8 +1151,34 @@ footer a:hover {
   border: 2px solid #ff3300 !important;
 }
 
-/* line 986, ../sass/styles.scss */
+/* line 985, ../sass/styles.scss */
+.send-button {
+  position: relative;
+}
+/* line 987, ../sass/styles.scss */
 .send-button button {
   display: block;
   margin: 0 auto;
+}
+/* line 991, ../sass/styles.scss */
+.send-button .spinner {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  margin-left: -25px;
+}
+
+/* line 999, ../sass/styles.scss */
+.faqs {
+  color: #1f1f1f;
+  border-bottom: 1px solid transparent;
+  -moz-transition: border-color 0.25s ease;
+  -o-transition: border-color 0.25s ease;
+  -webkit-transition: border-color 0.25s ease;
+  transition: border-color 0.25s ease;
+}
+/* line 1003, ../sass/styles.scss */
+.faqs:hover {
+  color: #1f1f1f;
+  border-bottom-color: #1f1f1f;
 }

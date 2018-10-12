@@ -1,0 +1,40 @@
+{% extends "AppBundle::Sitio/layout.html.twig" %}
+
+{% set is_interna = true %}
+{% block content %}
+		
+		{% include 'AppBundle:Sitio:intro-internas.html.twig' %}
+		
+        <main id="main">
+
+            <section id="complejo">
+                <div class="container wow fadeInUp">
+                    <header class="section-header">
+                        <h2>Preguntas frecuentes</h2>
+                    </header>
+                    <h3>&iquest;Qué capacidad tienen las cabañas?</h3>
+                    <p>Contamos con una unidad para dos personas solamente. Otra con capacidad hasta seis personas y las demás para cuatro personas con dos dormitorios cada una.</p>
+                    <h3>&iquest;La piscina es climatizada?</h3>
+                    <p>La piscina es climatizada por paneles solares, y está habilitada desde octubre a Marzo.</p>
+                    <h3>&iquest;¿Hay estacionamiento cerrado?</h3>
+                    <p>El estacionamiento es cubierto no cerrado y está frente a la cabaña.</p>
+                    <h3>&iquest;Tienen elementos para bebés?</h3>
+                    <p>Contamos con cunitas las cuales proveemos sin cargo con ropa de cama. También poseemos sillas altas y bañaderitas</p>
+                    <h3>&iquest;Pueden quedarse invitados?</h3>
+                    <p>El Solar del Bosque tiene modalidad de hotelería por lo que no se aceptan invitados para resguardar la tranquilidad del lugar.</p>
+                    <p>En la cabaña para dos personas se alquila para dos (2) personas, máximo un bebé de cuna.</p>
+                    <h3>&iquest;Ofrecen servicio de playa?</h3>
+                    <p>No tenemos servicio de playa, se ofrecen solo dos sillitas de playa por cabaña que deben ser solicitadas con la reserva.</p>
+                    <h3>&iquest;Es posible ir con mascotas?</h3>
+                    <p>Se aceptan mascotas pequeñas previa consulta y acuerdo con la administración.</p>
+                    <h3>&iquest;Aceptan cuatriciclos?</h3>
+                    <p>No se cuenta con lugar para guardar cuatriciclos pero en Mar de las Pampas hay una guardería para los mismos.</p>
+                    <h3>Política de cancelación de reservas</h3>
+                    <p>Cancelando la reserva de la unidad con una anticipación mayor a 14 días (temporada baja) y 30 días (temporada alta) se reintegra el 90% del anticipo, el 10% restantes es para los gastos bancarios y administrativos.</p>
+                    <p>Cancelando la reserva de la unidad con una anticipación menor a los días mencionados anteriormente, se retendrá el 100% del depósito.</p>
+                    <p>No habrá reintegros ni devoluciones por ausencia al momento del check in o por salida antes de la fecha del check out estipulada.</p>
+                </div>
+            </section>
+
+        </main>
+{% endblock %}        
