@@ -66,7 +66,7 @@
                                 <textarea class="form-control" name="message" id="form_mensaje" rows="5" data-rule="required" data-msg="Por favor escriba un mensaje" placeholder="Mensaje"></textarea>
                                 <div class="validation"></div>
                             </div>
-                            <div class="text-center">
+                            <div class="send-button">
                                 <button class="send" type="submit">Enviar Mensaje</button>
                                 {#<a href="" class="send">Enviar</a>#}
         						<div class="spinner" id="form_img_loading">
@@ -76,6 +76,9 @@
             						<div class="rect4"></div>
             						<div class="rect5"></div>
             					</div>
+                            </div>
+                            <div class="text-center mt-4">
+                                <a href="{{ url('faqs') }}" class="faqs">Preguntas frecuentes y Política de cancelación</a>
                             </div>
                         </form>
                     </div>
