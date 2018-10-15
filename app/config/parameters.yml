@@ -6,8 +6,8 @@ parameters:
     database_user: bf_merimar
     database_password: null
     mailer_transport: smtp
-    mailer_host: mail.hotelmerimargesell.com.ar
-    mailer_user: info@hotelmerimargesell.com.ar
+    mailer_host: mail.hotelmerimar.com.ar
+    mailer_user: info@hotelmerimar.com.ar
     mailer_password: 7?KZx,xsFxai
     mailer_port: 465
     mailer_encryption: tls
@@ -15,8 +15,8 @@ parameters:
     panel.img_usuario: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcpCc0N7KCGr-IUSd-Ng8wRJhhGMDK5_42-WhxST8QoQelGe8u'
     panel.nombre_sitio: 'Hotel Merimar'
     panel.login_logo: 'https://www.mardelaspampas.travel/bundles/mdlpsitio/images/header/logo.png'
-    asunto_contacto: Contacto de _nombre_ desde www.hotelmerimargesell.com.ar
-    contacto_from: info@hotelmerimargesell.com.ar
+    asunto_contacto: Contacto de _nombre_ desde www.hotelmerimar.com.ar
+    contacto_from: info@hotelmerimar.com.ar
     contacto_to: gabryel@gmail.com
     galeria_imagen_ancho: 700
     galeria_imagen_alto: 500
