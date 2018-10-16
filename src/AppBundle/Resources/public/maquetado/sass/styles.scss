@@ -57,6 +57,17 @@ body {
 			}
 		}
 	}
+	&.interna {
+		padding-top: 80px;
+		#intro {
+			display: none;
+		}
+	}
+	@media (min-width: 1024px) {
+		&.interna {
+			padding-top: 175px;
+		}
+	}
 }
 .back-to-top {
 	display: flex;
@@ -120,7 +131,7 @@ body {
 		display: block;
 		width: 100%;
 	}
-	@media (min-width: 768px) {
+	@media (min-width: 1024px) {
 		margin: 10px auto;
 		width: 600px;
 	}
@@ -420,7 +431,7 @@ section {
 	&.section-bg {
 		background-color: $section-bg;
 	}
-	@media (min-width: 768px) {
+	@media (min-width: 1024px) {
 		padding: 60px 0;
 		#intro {
 			padding: 0;
@@ -790,11 +801,13 @@ footer {
 		margin-top: 0;
 		font-size: 14px;
 		color: #898989;
-		.material-icons {
+		i, .material-icons {
 			position: relative;
 			top: 3px;
 			margin-right: 10px;
+			width: 14px;
 			font-size: 14px;
+			text-align: center;
 			color: $solarGold;
 		}
 	}
